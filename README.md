@@ -23,6 +23,12 @@ In the documentation, you can find a tutorial section that you can follow to lea
 - Matplotlib >= 3.3
 - Pandas >= 1.3
 - Pytorch
+- Pytorch lightning
+- Seaborn
+- pyreadr
+- Scipy
+
+All these required packages are listed in the `requirements.txt` file.
 
 ## Contributing
 We welcome contributions! If you'd like to contribute:

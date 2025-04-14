@@ -94,7 +94,7 @@ class Results():
                 model = lightning_interface.LightningAgeDomain(input_size, Tmax=Tmax)
         elif algo=='Weibull':
                 model = lightning_interface.LightningWeibull(input_size, Tmax=Tmax)
-        model.load_state_dict(torch.load(self.path_model)['state_dict'])
+        model.load_state_dict(torch.load(self.path_model, weights_only=False)['state_dict'])
         model.eval()
     
         with torch.no_grad():            
@@ -170,7 +170,7 @@ class Results():
                 model = lightning_interface.LightningAgeDomain(input_size, Tmax=Tmax)
             elif algo=='Weibull':
                 model = lightning_interface.LightningWeibull(input_size, Tmax=Tmax)
-            model.load_state_dict(torch.load(self.path_model)['state_dict'])
+            model.load_state_dict(torch.load(self.path_model, weights_only=False)['state_dict'])
             model.eval()
         
             with torch.no_grad():            
@@ -276,7 +276,7 @@ class Results():
         elif algo=='WATRES':
             model = lightning_interface.LightningWatres(input_size, Tmax=Tmax)
             
-        model.load_state_dict(torch.load(self.path_model)['state_dict'])
+        model.load_state_dict(torch.load(self.path_model, weights_only=False)['state_dict'])
         model.eval()
     
         with torch.no_grad():            

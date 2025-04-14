@@ -70,7 +70,7 @@ class WATRES(Dataset, Results):
         pathfile : str
             Path of the pretrained model to load. The extension of the file should be .pth.tar
         """
-        dic = torch.load(pathfile)
+        dic = torch.load(pathfile, weights_only=False)
         if self.path_model is None:
             self.path_model = dic.get('path_model', None)
         self.Tmax = dic['Tmax']

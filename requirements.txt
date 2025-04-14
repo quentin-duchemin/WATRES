@@ -1,0 +1,8 @@
+scipy
+numpy
+pytorch
+pytorch-lightning
+pyreadr
+pandas
+matplotlib
+seaborn
