@@ -165,7 +165,7 @@ class Results():
             result['timeyear_train'] = timeyear_train
             
             if algo=='WATRES':
-                model = lightning_interface.LightningWatres(input_size, Tmax=Tmax)
+                model = lightning_interface.LightningWatres(input_size, self.mean_input_tracer, Tmax=Tmax)
             elif algo=='AgeDomain':
                 model = lightning_interface.LightningAgeDomain(input_size, Tmax=Tmax)
             elif algo=='Weibull':
@@ -193,9 +193,14 @@ class Results():
         
                 if algo=='AgeDomain':
                     Chat, ywfhat, pQ = model.model.forward(data_train, J_train, CJ_train, returnpQ=True)
-                elif algo in ['WATRES', 'Weibull']:
+                elif algo == 'Weibull':
                     Chat, SThat, ywfhat, pQ = model.model.forward(data_train, J_train, CJ_train, returnpQ=True)
+                elif algo == 'WATRES':
+                    Chat, SThat, ywfhat, pQ, alpha = model.model.forward(data_train, J_train, CJ_train, return_alpha=True)
+                    result['alpha_train'] = alpha.detach().numpy()
 
+
+                    
         
         
                 Chat, ywfhat, pQ = Chat.detach().numpy(), ywfhat.detach().numpy(), pQ.detach().numpy()
@@ -274,7 +279,7 @@ class Results():
         elif algo=='Weibull':
             model = lightning_interface.LightningWeibull(input_size, Tmax=Tmax)
         elif algo=='WATRES':
-            model = lightning_interface.LightningWatres(input_size, Tmax=Tmax)
+            model = lightning_interface.LightningWatres(input_size, self.mean_input_tracer, Tmax=Tmax)
             
         model.load_state_dict(torch.load(self.path_model, weights_only=False)['state_dict'])
         model.eval()
@@ -299,7 +304,7 @@ class Results():
     
             if algo=='AgeDomain':
                 Chat, ywfhat, pQ = model.model.forward(data_test, J_test, CJ_test, returnpQ=True)
-            elif algo in ['WATRES', 'Weibull']:
+            elif algo == 'Weibull':
                 Chat, SThat, ywfhat, pQ = model.model.forward(data_test, J_test, CJ_test, returnpQ=True)
                 w = model.model.forward_w(data_test)
                 w = w.detach().numpy()
@@ -310,6 +315,21 @@ class Results():
                 summer_idxs = np.where(np.abs(0.5-frac_year)<=(2*30/365))[0]
                 result['w_winter'] = np.mean(w[winter_idxs.astype(int),:], axis=0)
                 result['w_summer'] = np.mean(w[summer_idxs.astype(int),:], axis=0)
+            elif algo == 'WATRES':
+                print('BEFORE')
+                Chat, SThat, ywfhat, pQ, alpha = model.model.forward(data_test, J_test, CJ_test, return_alpha=True)
+                print('AFTER')
+
+                w = model.model.forward_w(data_test)
+                w = w.detach().numpy()
+                frac_year = timeyear_test
+                frac_year = [el-int(el) for el in frac_year]
+                frac_year = np.array([min([1-el, el]) for el in frac_year])
+                winter_idxs = np.where(frac_year<=(2*30/365))[0]
+                summer_idxs = np.where(np.abs(0.5-frac_year)<=(2*30/365))[0]
+                result['w_winter'] = np.mean(w[winter_idxs.astype(int),:], axis=0)
+                result['w_summer'] = np.mean(w[summer_idxs.astype(int),:], axis=0)
+                result['alpha'] = alpha.detach().numpy()
 
 
             ####### 
@@ -320,7 +340,7 @@ class Results():
     
             result['Cout'] = Cout_test
             result['Chat'] = Chat
-            result['ywfhat'] = ywfhat        
+            result['ywfhat'] = ywfhat
     
             PQ_hat = np.cumsum(pQ, axis=1).T
             result['global_PQhat'] = np.mean(PQ_hat.T, axis=0)

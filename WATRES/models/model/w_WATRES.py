@@ -97,6 +97,7 @@ class Watres(nn.Module):
     def __init__(
         self,
         input_size,
+        mean_input_tracer,
         dmodel: int=10,
         Tmax: int = 24*365*5,
         KpQ: int = 6, 
@@ -105,6 +106,7 @@ class Watres(nn.Module):
         super().__init__()
         self.KpQ = KpQ
         self.Tmax = Tmax
+        self.mean_input_tracer = mean_input_tracer
         self.dmodel = dmodel
         self.seq_len = 150    
         def init_weights(m):
@@ -135,6 +137,24 @@ class Watres(nn.Module):
             nn.Softmax(dim=1)
             )
 
+        self.logit_alpha = nn.Parameter(torch.tensor(2.5))
+        
+        # nn.Sequential(
+        #     # First fully connected layer with BatchNorm and ReLU
+        #     nn.Linear(input_size, hidden_sizes[0]),
+        #     nn.BatchNorm1d(hidden_sizes[0]),
+        #     nn.ReLU(),
+            
+        #     # Second fully connected layer with BatchNorm and ReLU
+        #     nn.Linear(hidden_sizes[0], hidden_sizes[1]),
+        #     nn.BatchNorm1d(hidden_sizes[1]),
+        #     nn.ReLU(),
+            
+        #     # Final output layer to get the embedding
+        #     nn.Linear(hidden_sizes[1], 1),
+        #     nn.Sigmoid()
+        #     )
+
         self.basisw = BasisW(Tmax=Tmax)
         self.n_splines = self.basisw.basis_values.shape[0]
         self.basis_values = torch.tensor(self.basisw.basis_values).float()
@@ -162,13 +182,14 @@ class Watres(nn.Module):
         w = torch.mm(weights, self.basis_values) 
         return w
         
-    def forward(self, x,  J, CJ, returnpQ=False, EHS=False, idxsEHS=None):
+    def forward(self, x,  J, CJ, returnpQ=False, return_alpha=False, EHS=False, idxsEHS=None):
         ztemp = self.weights_basis.forward(x)
         w = torch.mm(ztemp, self.basis_values) 
         Jw = torch.flip(J, [1]) * w
         ST = torch.cumsum(Jw,1)
         pQcoeffs = self.pQcoeffs(x)
         pQ = torch.zeros((x.shape[0], self.Tmax))
+        alpha = nn.Sigmoid()(self.logit_alpha)  #(self.alpha(x)).view(-1)
         for k, param in enumerate(self.params_distri):
             a = self.params_distri[k]['a']
             b = self.params_distri[k]['b']
@@ -178,11 +199,13 @@ class Watres(nn.Module):
             pdf = pdf1 * Jw #Stot
             pdf = torch.nn.functional.normalize(pdf, p=1, dim=1)
             pQ = pQ + pQcoeffs[:,k].unsqueeze(1)*pdf
-        Chat = torch.sum( torch.flip(CJ, [1]) * pQ, dim=1)
+        Chat = alpha * torch.sum( torch.flip(CJ, [1]) * pQ, dim=1) + (1-alpha) * self.mean_input_tracer
         if EHS:
             return Chat, torch.cumsum(pQ, 1)[:,idxsEHS]
         else:
-            if returnpQ:
-                return Chat, ST[:,[24*30*j for j in range(1,10)]], torch.cumsum(pQ, 1)[:,[24*30*j for j in range(1,10)]], pQ
+            if return_alpha:
+                return Chat, ST[:,[24*30*j for j in range(1,10)]], torch.cumsum(alpha * pQ, 1)[:,[24*30*j for j in range(1,10)]], alpha * pQ, alpha
+            elif returnpQ:
+                return Chat, ST[:,[24*30*j for j in range(1,10)]], torch.cumsum(alpha * pQ, 1)[:,[24*30*j for j in range(1,10)]], alpha * pQ
             else:
-                return Chat, ST[:,[24*30*j for j in range(1,10)]], torch.cumsum(pQ, 1)[:,[24*30*j for j in range(1,10)]]        
+                return Chat, ST[:,[24*30*j for j in range(1,10)]], torch.cumsum(alpha * pQ, 1)[:,[24*30*j for j in range(1,10)]]        

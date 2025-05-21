@@ -3,12 +3,14 @@ import multiprocessing
 
 path_root = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../')
 
+# '/mydata/watres/quentin/PinballRT/final_watres/WATRES/'
+
 def trainf(x): 
     import sys
     sys.path.append(os.path.join(path_root))
     from WATRES import WATRES
     model_bert = WATRES(pathsite=x['pathsite'], site=x['site'], algo=x['algo'], site_name2save=x['site_name2save'])
-    model_bert.train(BATCH_SIZE=100, n_validation = 365*24*2, n_train=365*24*2, seed = x['seed'], nb_epochs=250, std_input_noise=x['input_std'], std_output_noise=x['output_std'])
+    model_bert.train(BATCH_SIZE=4000, n_validation = 365*24*2, n_train=365*24*10, seed = x['seed'], nb_epochs=400, std_input_noise=x['input_std'], std_output_noise=x['output_std'])
     return 1
 
 def testf(x): 
@@ -19,9 +21,9 @@ if __name__ == "__main__":
 
     # Define the sites and algorithms
     
-    input_std = 0.
-    output_std = 0.
-    sites = ['Pully_small_storage']#, 'Pully_large_storage', 'Lugano_small_storage','Lugano_large_storage','Basel_small_storage','Basel_large_storage'] 
+    input_std = 0.1
+    output_std = 0.1
+    sites = ['Pully_small_storage', 'Pully_large_storage', 'Lugano_small_storage','Lugano_large_storage','Basel_small_storage','Basel_large_storage'] 
 
 
     algos = ['WATRES']

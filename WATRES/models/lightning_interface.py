@@ -51,6 +51,7 @@ class LightningWatres(pl.LightningModule):
     def __init__(
         self,
         input_size,
+        mean_input_tracer,
         Tmax: int = 24*365*5,
         KpQ: int = 6,
     ):
@@ -58,6 +59,7 @@ class LightningWatres(pl.LightningModule):
         super().__init__()
         self.model = Watres(
             input_size,
+            mean_input_tracer,
             Tmax=Tmax
         )      
         self.KpQ = self.model.KpQ

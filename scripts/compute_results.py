@@ -14,7 +14,7 @@ def get_results(x):
         model = WATRES(pathsite=x['pathsite'], site=x['site'], algo=x['algo'], path_model=x['path_model'])
         print(f"Training {x['site']} with {x['algo']} on process {os.getpid()}")
         pathsite_ground_truth = ''
-        res = model.compute_results(BATCH_SIZE=365, n_test=365*24, save_training_results=True)
+        res = model.compute_results(BATCH_SIZE=365*10, n_test=365*24, save_training_results=False)
         return 1
     except Exception as e:
         print(f"Error training {x['site']} with {x['algo']}: {e}")
@@ -22,11 +22,11 @@ def get_results(x):
 
 if __name__ == "__main__":
     os.chdir(os.path.join(path_root, 'WATRES'))
-    sites = ['Pully_small_storage'] #'Basel_small_storage','Basel_large_storage','Lugano_small_storage','Lugano_large_storage','Pully_large_storage']
+    sites = ['Basel_small_storage','Basel_large_storage','Lugano_large_storage']# ['Pully_small_storage','Basel_small_storage','Basel_large_storage','Lugano_small_storage','Lugano_large_storage','Pully_large_storage']
     algos = ['WATRES']
     settings_algos = []
-    input_std = 0.
-    output_std = 0.
+    input_std = 0.1
+    output_std = 0.1
 
     for site in sites:
         pathsite = os.path.join(path_root, f'data/{site}/')

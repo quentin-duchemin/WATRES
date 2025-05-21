@@ -83,6 +83,7 @@ class WATRES(Dataset, Results):
         self.subsampling_resolution = dic.get('subsampling_resolution', None)
         self.std_input_noise = dic.get('std_input_noise', None)
         self.std_output_noise = dic.get('std_output_noise', None)
+        self.mean_input_tracer = dic.get('mean_input_tracer', None)
 
     def train(self, BATCH_SIZE = 1000, nb_epochs=200, lr=1e-3, n_test=0, n_validation=24*200, n_train=None, use_cout4batch=False, seed=4, subsampling_resolution=None, std_input_noise=None, std_output_noise=None):
         """
@@ -120,6 +121,9 @@ class WATRES(Dataset, Results):
         algo = self.algo
 
         J, Q, ET, CJ, Cout = self.get_data(pathsite, site, include_concentration=True, input_noise=None, output_noise=None)
+
+        weights = J * (J>0)
+        self.mean_input_tracer = torch.mean(CJ * weights) / torch.mean(weights)
         
         if not(std_input_noise is None):
             CJ = CJ + np.random.normal(0, std_input_noise, size=len(CJ))
@@ -187,7 +191,7 @@ class WATRES(Dataset, Results):
         if algo=='Weibull':
             model = lightning_interface.LightningWeibull(input_size, Tmax=Tmax)
         elif algo=='WATRES':
-            model = lightning_interface.LightningWatres(input_size, Tmax=Tmax)
+            model = lightning_interface.LightningWatres(input_size, self.mean_input_tracer, Tmax=Tmax)
         elif algo=='AgeDomain':
             model = lightning_interface.LightningAgeDomain(input_size, Tmax=Tmax)
             
@@ -227,6 +231,8 @@ class WATRES(Dataset, Results):
                         'timeyear_train': self.timeyear_train,
                         'std_input_noise':std_input_noise,
                         'std_output_noise':std_output_noise,
-                        'subsampling_resolution':subsampling_resolution
+                        'subsampling_resolution':subsampling_resolution,
+                        'mean_input_tracer':self.mean_input_tracer
+
                         }
                 torch.save(state, os.path.join(pathsite, 'save', 'save_{0}_'.format(self.site_name2save)+self.algo+'.pth.tar'))
