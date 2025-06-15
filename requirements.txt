@@ -1,6 +1,6 @@
 scipy
 numpy
-pytorch
+torch
 pytorch-lightning
 pyreadr
 pandas
