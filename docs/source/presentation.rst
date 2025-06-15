@@ -15,9 +15,22 @@ Watersheds are complex systems influenced by a multitude of factors, including t
 Description of the method
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We introduce a new knowledge-guided but data-driven methodology to estimate the transit time distributions of watershed. Our model relies on mixture methods and leverage ideas from survival analysis. The features used by our model are information describing the catchment condition induced by past events such as weighted sum of past precipitation and potential evapotranspiration. 
+Our model is easily extensible to incorporate additional features. A common example is the inclusion of a **time variable**, which enables the model to learn potential temporal variations in catchment behavior.
 
-One can easily add additional features to our model. A typical example is the cosine and sine of the time from January 1st to allow the model to estimate a seasonality pattern. Another example is a time variable allowing the model to learn potential change over time of the catchment behaviour.
+## Training
+
+To train the **WATRES** model, the following inputs are required:
+
+- Tracer input and output concentrations  
+- Precipitation  
+- Streamflow  
+- Potential evapotranspiration (PET)  
+
+PET can be estimated using external tools such as the **Pyeto** package. All input data must share a **consistent time resolution** — this can be arbitrarily chosen (e.g., hourly, daily, or weekly), as long as it's applied uniformly across all inputs.
+
+## Inference
+
+Once trained, the WATRES model can infer **transit time distributions** using only **flux data** (precipitation and streamflow); **tracer data is not required during inference**.
 
 Applications of the method
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

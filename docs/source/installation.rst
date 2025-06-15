@@ -6,7 +6,7 @@ Installation
 Prerequisites
 ~~~~~~~~~~~~~~
 
-GAMCR is a Python package allowing to learn reponse to different treatments of tumor at the subclonal resolution. In the following, we describe the steps to follow to get a correct environment to use our package.
+WATRES is a Python package allowing to predict transit time distributions of watersheds from precipitation, streamflow and potential evapostranspiration data.
 
 conda prerequisites
 ###################
@@ -15,11 +15,11 @@ conda prerequisites
 
 2. Create a new conda environment::
 
-    conda create -n gamcr-env python=3.7
+    conda create -n watres-env python=3.7
 
 3. Activate your environment::
 
-    source activate gamcr-env
+    source activate watres-env
 
 python prerequisites
 ####################
@@ -38,7 +38,7 @@ Downloading the package
 
 1. clone the repository::
 	
-	git clone https://github.com/quentin-duchemin/GAMCR.git
+	git clone https://github.com/quentin-duchemin/WATRES.git
 
 
 2. install the required python packages in the virtualenv::

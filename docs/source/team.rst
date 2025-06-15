@@ -51,6 +51,33 @@ Team
                             </ul><!--end icon-->
                         </div>
                     </div>
-                </div><!--end col-->            
+                </div><!--end col-->     
+                
+                <div class="col-lg-3 col-md-6 col-9 mt-4 pt-2">
+                    <div class="team text-center rounded p-3 py-4">
+                        <img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=xSkCtK8AAAAJ&citpid=6" class="img-fluid avatar avatar-medium shadow rounded-pill" alt="">
+                        <div class="content mt-3">
+                            <h4 class="title mb-0">James Kirchner</h4>
+                            <small class="text-muted">Professor Emeritus at the Department of Environmental Systems Science</small>
+                            <ul class="list-unstyled mt-3 social-icon social mb-0">
+                                <li class="list-inline-item"><a href="https://scholar.google.com/citations?user=xSkCtK8AAAAJ&hl=fr" class="rounded"><i class="mdi mdi-web" title="LinkedIn"></i></a></li>
+                            </ul><!--end icon-->
+                        </div>
+                    </div>
+                </div><!--end col-->        
             </div><!--end row-->
+            
+            
+            <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+                    <div class="team text-center rounded p-3 py-4">
+                        <img src="https://wp.unil.ch/hydrology/files/2023/12/Raphael_Miazza-1.jpg" class="img-fluid avatar avatar-medium shadow rounded-pill" alt="">
+                        <div class="content mt-3">
+                            <h4 class="title mb-0">Raphaël Miazza</h4>
+                            <small class="text-muted">PhD student at UNIL</small>
+                            <ul class="list-unstyled mt-3 social-icon social mb-0">
+                                <li class="list-inline-item"><a href="https://wp.unil.ch/hydrology/raphael-miazza/" class="rounded"><i class="mdi mdi-web" title="Personal Webpage"></i></a></li>
+                            </ul><!--end icon-->
+                        </div>
+                    </div>
+                </div><!--end col-->    
         </div>
