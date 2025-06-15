@@ -1,0 +1,720 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Running the model &#8212; WATRES</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/override.css?v=dd5beb26" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/sphinx_gallery.css?v=370a08b5" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_logo.css?v=f521e7f3" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=29a6c3e3"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/notebooks/running-the-model';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Developer" href="../../developer/index.html" />
+    <link rel="prev" title="Reproducing results of our paper" href="reproducing_results.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">WATRES</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../presentation.html">
+    Presentation of the project
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../documentation/WATRES.html">
+    WATRES package
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../developer/index.html">
+    Developer
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../references.html">
+    References
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../team.html">
+    Team
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../presentation.html">
+    Presentation of the project
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../documentation/WATRES.html">
+    WATRES package
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../developer/index.html">
+    Developer
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../references.html">
+    References
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../team.html">
+    Team
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">WATRES in practice: A brief overview</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="reproducing_results.html">Reproducing results of our paper</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Running the model</a></li>
+
+
+
+
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Tutorials</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Running the model</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="Running-the-model">
+<h1>Running the model<a class="headerlink" href="#Running-the-model" title="Link to this heading">#</a></h1>
+<p>This note explains in a nutshell how the data should be formatted and what preprocessing steps are needed to run the WATRES model.</p>
+</section>
+<section id="1.-Check-That-Your-Dataset-Has-the-Right-Format">
+<h1>1. Check That Your Dataset Has the Right Format<a class="headerlink" href="#1.-Check-That-Your-Dataset-Has-the-Right-Format" title="Link to this heading">#</a></h1>
+<p>Your dataset should be a file named <code class="docutils literal notranslate"><span class="pre">{site_name}.txt</span></code> with the following required column names:</p>
+<ul class="simple">
+<li><p><strong>``t``</strong>: Represents the year in decimal format (e.g., 2022.45).</p></li>
+<li><p><strong>``p``</strong>: Precipitation.</p></li>
+<li><p><strong>``pet``</strong>: Potential evapotranspiration.</p></li>
+<li><p><strong>``q``</strong>: Streamflow.</p></li>
+<li><p><strong>``Cp``</strong>: Input tracer data.</p></li>
+<li><p><strong>``Cq``</strong>: Output tracer data.</p></li>
+</ul>
+<hr class="docutils" />
+<section id="Folder-Structure-for-Using-WATRES">
+<h2>Folder Structure for Using WATRES<a class="headerlink" href="#Folder-Structure-for-Using-WATRES" title="Link to this heading">#</a></h2>
+<p>To properly use the WATRES package, create a folder for your site named <code class="docutils literal notranslate"><span class="pre">{site_name}</span></code>. This folder should follow the structure below:</p>
+<ul>
+<li><p>WATRES will save the models you train for this site in the same folder.</p></li>
+<li><p>Two subfolders</p>
+<ul>
+<li><div class="line-block">
+<div class="line"><strong>``data/``</strong>:</div>
+<div class="line">This subfolder stores the data: <code class="docutils literal notranslate"><span class="pre">{site_name}.txt</span></code>.</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><strong>``save/``</strong>:</div>
+<div class="line">WATRES will save the models you train for this site in this folder. This folder will also store the statistics on the results of a trained model, created when calling the <code class="docutils literal notranslate"><span class="pre">compute_results.py</span></code> method (see the <code class="docutils literal notranslate"><span class="pre">scripts</span></code> folder.</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="2.-Training-a-Model">
+<h1>2. Training a Model<a class="headerlink" href="#2.-Training-a-Model" title="Link to this heading">#</a></h1>
+<section id="➡️-Run-the-Script:-train_models.py">
+<h2>➡️ Run the Script: <code class="docutils literal notranslate"><span class="pre">train_models.py</span></code><a class="headerlink" href="#➡️-Run-the-Script:-train_models.py" title="Link to this heading">#</a></h2>
+<p>This scripts looks like this:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">trainf</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_root</span><span class="p">))</span>
+    <span class="kn">from</span> <span class="nn">WATRES</span> <span class="kn">import</span> <span class="n">WATRES</span>
+    <span class="n">model_bert</span> <span class="o">=</span> <span class="n">WATRES</span><span class="p">(</span><span class="n">pathsite</span><span class="o">=</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;pathsite&#39;</span><span class="p">],</span> <span class="n">site</span><span class="o">=</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;site&#39;</span><span class="p">],</span> <span class="n">algo</span><span class="o">=</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;algo&#39;</span><span class="p">],</span> <span class="n">site_name2save</span><span class="o">=</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;site_name2save&#39;</span><span class="p">])</span>
+    <span class="n">model_bert</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">BATCH_SIZE</span><span class="o">=</span><span class="mi">4000</span><span class="p">,</span> <span class="n">Tmax</span> <span class="o">=</span> <span class="mi">43200</span><span class="p">,</span> <span class="n">n_validation</span> <span class="o">=</span> <span class="mi">365</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_train</span><span class="o">=</span><span class="mi">365</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;seed&#39;</span><span class="p">],</span> <span class="n">nb_epochs</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">std_input_noise</span><span class="o">=</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;input_std&#39;</span><span class="p">],</span> <span class="n">std_output_noise</span><span class="o">=</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;output_std&#39;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_root</span><span class="p">,</span> <span class="s1">&#39;WATRES&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Define the sites and algorithms</span>
+
+    <span class="n">input_std</span> <span class="o">=</span> <span class="mf">0.1</span>
+    <span class="n">output_std</span> <span class="o">=</span> <span class="mf">0.1</span>
+    <span class="n">sites</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Pully_small_storage&#39;</span><span class="p">,</span> <span class="s1">&#39;Pully_large_storage&#39;</span><span class="p">,</span> <span class="s1">&#39;Lugano_small_storage&#39;</span><span class="p">,</span><span class="s1">&#39;Lugano_large_storage&#39;</span><span class="p">,</span><span class="s1">&#39;Basel_small_storage&#39;</span><span class="p">,</span><span class="s1">&#39;Basel_large_storage&#39;</span><span class="p">]</span>
+
+
+    <span class="n">algos</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;WATRES&#39;</span><span class="p">]</span>
+
+
+    <span class="n">settings_algos</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">site</span> <span class="ow">in</span> <span class="n">sites</span><span class="p">:</span>
+        <span class="n">pathsite</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_root</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;data/</span><span class="si">{</span><span class="n">site</span><span class="si">}</span><span class="s1">/&#39;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">algo</span> <span class="ow">in</span> <span class="n">algos</span><span class="p">:</span>
+            <span class="n">site_name2save</span> <span class="o">=</span> <span class="s1">&#39;input_std_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">input_std</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;-output_std_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">output_std</span><span class="p">)</span>
+
+            <span class="n">settings_algos</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s1">&#39;site&#39;</span><span class="p">:</span> <span class="n">site</span><span class="p">,</span>
+                <span class="s1">&#39;site_name2save&#39;</span><span class="p">:</span><span class="n">site_name2save</span><span class="p">,</span>
+                <span class="s1">&#39;pathsite&#39;</span><span class="p">:</span> <span class="n">pathsite</span><span class="p">,</span>
+                <span class="s1">&#39;algo&#39;</span><span class="p">:</span> <span class="n">algo</span><span class="p">,</span>
+                <span class="s1">&#39;seed&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s1">&#39;input_std&#39;</span><span class="p">:</span><span class="n">input_std</span><span class="p">,</span>
+                <span class="s1">&#39;output_std&#39;</span><span class="p">:</span><span class="n">output_std</span>
+            <span class="p">})</span>
+
+    <span class="k">for</span> <span class="n">sett</span> <span class="ow">in</span> <span class="n">settings_algos</span><span class="p">:</span>
+        <span class="n">trainf</span><span class="p">(</span><span class="n">sett</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>In the following, we explain step by step the meaning of the parameter you can define:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">input_std</span></code>: standard deviation of the Gaussian white noise that will be added on the input tracer data before training the model.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">output_std</span></code>: standard deviation of the Gaussian white noise that will be added on the output tracer data before training the model.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sites</span></code>: list of the names of the site on which you want to train the model.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">algos</span></code>: list of the names of the model you want to use.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">site_name2save</span></code>: You can freely decide to give the name you want to the model that you be trained. This name will be used to save the checkpoint and the results.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">model_bert.train(BATCH_SIZE=4000,</span> <span class="pre">n_validation</span> <span class="pre">=</span> <span class="pre">365*24*2,</span> <span class="pre">n_train=365*24*10,</span> <span class="pre">seed</span> <span class="pre">=</span> <span class="pre">x['seed'],</span> <span class="pre">nb_epochs=400,</span> <span class="pre">std_input_noise=x['input_std'],</span> <span class="pre">std_output_noise=x['output_std'])</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">BATCH_SIZE</span></code>: size of the training set. Note that these points will be sampled equally across the four quartiles of the discharge range.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Tmax</span></code>: age horizon used to model the transit time distributions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n_validation</span></code>: number of most recent time points to be withheld from training (e.g., for forecasting).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n_train</span></code>: number of time steps directly before the validation period to be used for sampling the training data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seed</span></code>: random seed</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nb_epochs</span></code>: number of epochs to train the model</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="3.-Inference">
+<h1>3. Inference<a class="headerlink" href="#3.-Inference" title="Link to this heading">#</a></h1>
+<p>In the following, we explain how inference can be made easily with a trained model.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">site</span> <span class="o">=</span> <span class="s1">&#39;Pully_small_storage&#39;</span>
+
+<span class="c1"># Name that you provided to you trained model (TO BE MODIFIED)</span>
+<span class="n">site_name2save</span> <span class="o">=</span> <span class="s1">&#39;input_std_0.1-output_std_0.1&#39;</span>
+
+<span class="n">algo</span> <span class="o">=</span> <span class="s1">&#39;WATRES&#39;</span>
+
+
+<span class="c1"># Define the dates for which you would like to get the predicted transit time distributions.</span>
+<span class="k">def</span> <span class="nf">filter_dates</span><span class="p">(</span><span class="n">dates</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">dates</span><span class="o">&gt;=</span><span class="mi">2020</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;pathsite&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root_path</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;data/</span><span class="si">{</span><span class="n">site</span><span class="si">}</span><span class="s2">/&quot;</span><span class="p">),</span>
+    <span class="s1">&#39;path_model&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root_path</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;data/</span><span class="si">{</span><span class="n">site</span><span class="si">}</span><span class="s2">/save/save_</span><span class="si">{</span><span class="n">site_name2save</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">algo</span><span class="si">}</span><span class="s2">.pth.tar&quot;</span><span class="p">),</span>
+    <span class="s1">&#39;site&#39;</span><span class="p">:</span> <span class="n">site</span><span class="p">,</span>
+    <span class="s1">&#39;algo&#39;</span><span class="p">:</span> <span class="n">algo</span>
+<span class="p">}</span>
+
+<span class="c1"># Loading the pretrained model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">WATRES</span><span class="p">(</span><span class="n">pathsite</span><span class="o">=</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;pathsite&#39;</span><span class="p">],</span> <span class="n">site</span><span class="o">=</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;site&#39;</span><span class="p">],</span> <span class="n">algo</span><span class="o">=</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;algo&#39;</span><span class="p">],</span> <span class="n">path_model</span><span class="o">=</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;path_model&#39;</span><span class="p">])</span>
+
+<span class="c1"># Getting the results for the dates defined by the filter</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">model_estimate</span><span class="p">(</span><span class="n">filter_dates</span><span class="p">,</span> <span class="n">BATCH_SIZE</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+
+<span class="c1"># Showing prediction on output tracer data</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;timeyear&#39;</span><span class="p">]</span>
+
+<span class="c1"># Observed output tracer</span>
+<span class="n">Cout</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;Cout&#39;</span><span class="p">]</span>
+
+<span class="c1"># Predicted output tracer</span>
+<span class="n">Chat</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;Chat&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="4.-Computing-automatically-some-relevant-statistics">
+<h1>4. Computing automatically some relevant statistics<a class="headerlink" href="#4.-Computing-automatically-some-relevant-statistics" title="Link to this heading">#</a></h1>
+<p>Note that if you want, you can also run the Script: <code class="docutils literal notranslate"><span class="pre">compute_results.py</span></code>.</p>
+<p>Running this script will allow you to precompute a lot of relevant quantities automatically.</p>
+<p>You can then rely on the notebook <code class="docutils literal notranslate"><span class="pre">reproducing_figures_paper.ipynb</span></code> in the folder <code class="docutils literal notranslate"><span class="pre">notebook</span></code> to get nice visualizations similar to the ones produced in our paper.</p>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="reproducing_results.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Reproducing results of our paper</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../developer/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Developer</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Running the model</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#1.-Check-That-Your-Dataset-Has-the-Right-Format">1. Check That Your Dataset Has the Right Format</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Folder-Structure-for-Using-WATRES">Folder Structure for Using WATRES</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#2.-Training-a-Model">2. Training a Model</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#➡️-Run-the-Script:-train_models.py">➡️ Run the Script: <code class="docutils literal notranslate"><span class="pre">train_models.py</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#3.-Inference">3. Inference</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#4.-Computing-automatically-some-relevant-statistics">4. Computing automatically some relevant statistics</a></li>
+</ul>
+
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/tutorials/notebooks/running-the-model.ipynb.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Q.Duchemin and P.Benettin.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

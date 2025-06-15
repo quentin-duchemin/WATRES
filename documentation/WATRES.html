@@ -1,0 +1,1010 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>WATRES package &#8212; WATRES</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/override.css?v=dd5beb26" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/sphinx_gallery.css?v=370a08b5" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom_logo.css?v=f521e7f3" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=29a6c3e3"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/WATRES';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="WATRES.models package" href="WATRES.models.html" />
+    <link rel="prev" title="Presentation of the project" href="../presentation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">WATRES</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../presentation.html">
+    Presentation of the project
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    WATRES package
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../developer/index.html">
+    Developer
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../references.html">
+    References
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../team.html">
+    Team
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../presentation.html">
+    Presentation of the project
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    WATRES package
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../developer/index.html">
+    Developer
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../references.html">
+    References
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../team.html">
+    Team
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="WATRES.models.html">WATRES.models package</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">WATRES package</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="watres-package">
+<h1>WATRES package<a class="headerlink" href="#watres-package" title="Link to this heading">#</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="WATRES.models.html">WATRES.models package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="WATRES.models.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="WATRES.models.model.html">WATRES.models.model package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="WATRES.models.model.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WATRES.models.model.html#module-WATRES.models.model.basisw">WATRES.models.model.basisw module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WATRES.models.model.html#module-WATRES.models.model.utils">WATRES.models.model.utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WATRES.models.model.html#module-WATRES.models.model.w_WATRES">WATRES.models.model.w_WATRES module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WATRES.models.model.html#module-WATRES.models.model.w_WATRES_old">WATRES.models.model.w_WATRES_old module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WATRES.models.model.html#module-WATRES.models.model.w_age_domain">WATRES.models.model.w_age_domain module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WATRES.models.model.html#watres-models-model-w-sum-squares-nobert2-bayesian3-module">WATRES.models.model.w_sum_squares_noBERT2_bayesian3 module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WATRES.models.model.html#module-WATRES.models.model.w_weibull">WATRES.models.model.w_weibull module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WATRES.models.model.html#module-WATRES.models.model">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="WATRES.models.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WATRES.models.html#module-WATRES.models.lightning_interface">WATRES.models.lightning_interface module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="WATRES.models.html#WATRES.models.lightning_interface.LightningWeibull"><code class="docutils literal notranslate"><span class="pre">LightningWeibull</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="WATRES.models.html#WATRES.models.lightning_interface.LightningWeibull.forward_w"><code class="docutils literal notranslate"><span class="pre">LightningWeibull.forward_w()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="WATRES.models.html#WATRES.models.lightning_interface.LightningWeibull.forward"><code class="docutils literal notranslate"><span class="pre">LightningWeibull.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="WATRES.models.html#WATRES.models.lightning_interface.LightningWeibull.configure_optimizers"><code class="docutils literal notranslate"><span class="pre">LightningWeibull.configure_optimizers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="WATRES.models.html#WATRES.models.lightning_interface.LightningWeibull.training_step"><code class="docutils literal notranslate"><span class="pre">LightningWeibull.training_step()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="WATRES.models.html#WATRES.models.lightning_interface.LightningWatres"><code class="docutils literal notranslate"><span class="pre">LightningWatres</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="WATRES.models.html#WATRES.models.lightning_interface.LightningWatres.forward"><code class="docutils literal notranslate"><span class="pre">LightningWatres.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="WATRES.models.html#WATRES.models.lightning_interface.LightningWatres.forward_w"><code class="docutils literal notranslate"><span class="pre">LightningWatres.forward_w()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="WATRES.models.html#WATRES.models.lightning_interface.LightningWatres.configure_optimizers"><code class="docutils literal notranslate"><span class="pre">LightningWatres.configure_optimizers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="WATRES.models.html#WATRES.models.lightning_interface.LightningWatres.training_step_w"><code class="docutils literal notranslate"><span class="pre">LightningWatres.training_step_w()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="WATRES.models.html#WATRES.models.lightning_interface.LightningWatres.training_step"><code class="docutils literal notranslate"><span class="pre">LightningWatres.training_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="WATRES.models.html#WATRES.models.lightning_interface.LightningWatres.training_step_EHS"><code class="docutils literal notranslate"><span class="pre">LightningWatres.training_step_EHS()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="WATRES.models.html#WATRES.models.lightning_interface.LightningAgeDomain"><code class="docutils literal notranslate"><span class="pre">LightningAgeDomain</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="WATRES.models.html#WATRES.models.lightning_interface.LightningAgeDomain.forward"><code class="docutils literal notranslate"><span class="pre">LightningAgeDomain.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="WATRES.models.html#WATRES.models.lightning_interface.LightningAgeDomain.configure_optimizers"><code class="docutils literal notranslate"><span class="pre">LightningAgeDomain.configure_optimizers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="WATRES.models.html#WATRES.models.lightning_interface.LightningAgeDomain.training_step"><code class="docutils literal notranslate"><span class="pre">LightningAgeDomain.training_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="WATRES.models.html#module-WATRES.models">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-WATRES.WATRES">
+<span id="watres-watres-module"></span><h2>WATRES.WATRES module<a class="headerlink" href="#module-WATRES.WATRES" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="WATRES.WATRES.WATRES">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">WATRES.WATRES.</span></span><span class="sig-name descname"><span class="pre">WATRES</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pathsite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">site</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'WATRES'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Tmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">43200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">site_name2save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/WATRES.html#WATRES"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.WATRES.WATRES" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#WATRES.dataset.Dataset" title="WATRES.dataset.Dataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code></a>, <a class="reference internal" href="#WATRES.results.Results" title="WATRES.results.Results"><code class="xref py py-class docutils literal notranslate"><span class="pre">Results</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="WATRES.WATRES.WATRES.load_model">
+<span class="sig-name descname"><span class="pre">load_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pathfile</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/WATRES.html#WATRES.load_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.WATRES.WATRES.load_model" title="Link to this definition">#</a></dt>
+<dd><p>Load a pretrained model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>pathfile</strong> <span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a></span></dt></dt><dd><p>Path of the pretrained model to load. The extension of the file should be .pth.tar</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WATRES.WATRES.WATRES.train">
+<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">BATCH_SIZE</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_epochs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_test</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_validation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4800</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_train</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_cout4batch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subsampling_resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">std_input_noise</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">std_output_noise</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/WATRES.html#WATRES.train"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.WATRES.WATRES.train" title="Link to this definition">#</a></dt>
+<dd><p>Train a model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>BATCH_SIZE</strong> <span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a></span></dt></dt><dd><p>Size of the training set.</p>
+</dd>
+<dt><strong>nb_epochs</strong> <span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a></span></dt></dt><dd><p>Number of epochs to train the model.</p>
+</dd>
+<dt><strong>lr</strong> <span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a></span></dt></dt><dd><p>Learning rate used to train the model.</p>
+</dd>
+<dt><strong>n_test</strong> <span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a></span></dt></dt><dd><p>Number of time points at the end of the dataset to keep as test points (and thus to not use to train the model).</p>
+</dd>
+<dt><strong>n_validation</strong> <span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a></span></dt></dt><dd><p>Number of time points between the training set and the beginning of the test set to consider as the validation set.</p>
+</dd>
+<dt><strong>n_train</strong> <span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a></span></dt></dt><dd><p>Number of time points between the beginning of the training set and the beginning of the validation set to consider as the training set.</p>
+</dd>
+<dt><strong>use_cout4batch</strong> <span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a></span></dt></dt><dd><p>If True, the training set is constructed sampling on equal number of points within the 4 equally space quantiles of the tracer output data. If False, the same procedure is done by relying on quantiles of the streamflow time series.</p>
+</dd>
+<dt><strong>seed</strong> <span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a></span></dt></dt><dd><p>Fixing the seed of the random generator, for reproducibility.</p>
+</dd>
+<dt><strong>subsampling_resolution</strong> <span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a><em>, </em><em>default None</em></span></dt></dt><dd><p>If not None, the training set is sampled doing as output tracer is available only every <cite>subsampling_resolution</cite> time steps. Warning: this is not sufficient to simulate an experiment where all tracer data would be sample at the resolution <cite>subsampling_resolution</cite>: one needs to modify the intput tracer data by computing a weighted average of the fine resolution input tracer time series.</p>
+</dd>
+<dt><strong>std_input_noise</strong> <span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><em>default None</em></span></dt></dt><dd><p>Standard deviation of the zero mean Gaussian noise added to the input tracer data. If None, no noise is added.</p>
+</dd>
+<dt><strong>std_output_noise</strong> <span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><em>default None</em></span></dt></dt><dd><p>Standard deviation of the zero mean Gaussian noise added to the output tracer data. If None, no noise is added.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-WATRES.dataset">
+<span id="watres-dataset-module"></span><h2>WATRES.dataset module<a class="headerlink" href="#module-WATRES.dataset" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="WATRES.dataset.Dataset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">WATRES.dataset.</span></span><span class="sig-name descname"><span class="pre">Dataset</span></span><a class="reference internal" href="../_modules/WATRES/dataset.html#Dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.dataset.Dataset" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Dataset class of the WATRES package to learn transit time distributions of a given watershed.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="WATRES.dataset.Dataset.datetime2year_month">
+<span class="sig-name descname"><span class="pre">datetime2year_month</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/dataset.html#Dataset.datetime2year_month"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.dataset.Dataset.datetime2year_month" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WATRES.dataset.Dataset.get_time_points">
+<span class="sig-name descname"><span class="pre">get_time_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pathsite</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">site</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">BATCH_SIZE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_cout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subsampling_resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/dataset.html#Dataset.get_time_points"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.dataset.Dataset.get_time_points" title="Link to this definition">#</a></dt>
+<dd><p>Selects time points to make sure that the batch contains a representative sample of the discharge data (or of the output tracer data is <cite>use_cout</cite> is True).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WATRES.dataset.Dataset.get_features">
+<span class="sig-name descname"><span class="pre">get_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pathsite</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">site</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lst</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/dataset.html#Dataset.get_features"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.dataset.Dataset.get_features" title="Link to this definition">#</a></dt>
+<dd><p>Compute the feature vectors to feed to the neural networks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>pathsite</strong> <span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a></span></dt></dt><dd><p>Path of the site considered.</p>
+</dd>
+<dt><strong>site</strong> <span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a></span></dt></dt><dd><p>Name of the site considered.</p>
+</dd>
+<dt><strong>lst</strong> <span class="classifier"><em>array</em><em> of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a></span></dt></dt><dd><p>List of indexes of the time points for which we want to compute the feature vector.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WATRES.dataset.Dataset.get_data">
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pathsite</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">site</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_concentration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_noise</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_noise</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">get_timeyear</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/dataset.html#Dataset.get_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.dataset.Dataset.get_data" title="Link to this definition">#</a></dt>
+<dd><p>Return the flow time series (and the tracer ones also if <a href="#id1"><span class="problematic" id="id2">`</span></a>include_concentration`=True).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>pathsite</strong> <span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a></span></dt></dt><dd><p>Path of the site considered.</p>
+</dd>
+<dt><strong>site</strong> <span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a></span></dt></dt><dd><p>Name of the site considered.</p>
+</dd>
+<dt><strong>include_concentration</strong> <span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a></span></dt></dt><dd><p>If True, the tracer data is also provided (with precipitation, streamflow and PET).</p>
+</dd>
+<dt><strong>input_noise</strong> <span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><em>default None</em></span></dt></dt><dd><p>Standard deviation of the zero mean Gaussian noise added to the input tracer data. If None, no noise is added.</p>
+</dd>
+<dt><strong>output_noise</strong> <span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><em>default None</em></span></dt></dt><dd><p>Standard deviation of the zero mean Gaussian noise added to the output tracer data. If None, no noise is added.</p>
+</dd>
+<dt><strong>get_timeyear</strong> <span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a></span></dt></dt><dd><p>If True, fractional year of the data is also returned.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-WATRES.results">
+<span id="watres-results-module"></span><h2>WATRES.results module<a class="headerlink" href="#module-WATRES.results" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.results.global_average">
+<span class="sig-prename descclassname"><span class="pre">WATRES.results.</span></span><span class="sig-name descname"><span class="pre">global_average</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">PQ_hat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ttd</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/results.html#global_average"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.results.global_average" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.results.average_by_Qquantiles">
+<span class="sig-prename descclassname"><span class="pre">WATRES.results.</span></span><span class="sig-name descname"><span class="pre">average_by_Qquantiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">PQ_hat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ttd</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/results.html#average_by_Qquantiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.results.average_by_Qquantiles" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="WATRES.results.Results">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">WATRES.results.</span></span><span class="sig-name descname"><span class="pre">Results</span></span><a class="reference internal" href="../_modules/WATRES/results.html#Results"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.results.Results" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Result class of the WATRES package to predict transit time distributions of a given watershed.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="WATRES.results.Results.model_estimate">
+<span class="sig-name descname"><span class="pre">model_estimate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filter_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">BATCH_SIZE</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/results.html#Results.model_estimate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.results.Results.model_estimate" title="Link to this definition">#</a></dt>
+<dd><p>Estimates the cumulative TTDs (Transit Time Distributions) and predicts the output tracer time series using the trained model.
+filter_dates : callable, optional</p>
+<blockquote>
+<div><p>A function that takes an array of fractional years (e.g., [2020.43, 2020.47, …]) and returns the indices of the time points to keep.
+Example:</p>
+<blockquote>
+<div><p>return np.where(dates &gt;= 2020)[0]</p>
+</div></blockquote>
+<p>If None, all available time points are used.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>BATCH_SIZE<span class="classifier">int, optional</span></dt><dd><p>Number of time points (after filtering) to use for model evaluation. If None, all filtered time points are used.
+If specified, time points are subsampled evenly across the filtered set.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>result : dict
+Dictionary containing the following keys:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>’time_index’: Indices of the selected time points.</p></li>
+<li><p>’timeyear’: Fractional years corresponding to the selected time points.</p></li>
+<li><p>’Cout’: True output tracer concentrations for the selected time points (torch.Tensor).</p></li>
+<li><p>’Chat’: Predicted output tracer concentrations (numpy.ndarray).</p></li>
+<li><p>’ywfhat’: Estimated cumulative TTDs (numpy.ndarray).</p></li>
+<li><p>’PQhat’: Cumulative sum of the predicted TTDs (numpy.ndarray).</p></li>
+<li><p>’ERROR_Cout’: Normalized L2 error between predicted and true output concentrations.</p></li>
+</ul>
+</div></blockquote>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>The method loads a trained model based on the specified algorithm (<cite>algo</cite> attribute).</p></li>
+<li><p>Data is preprocessed and batched according to the provided parameters.</p></li>
+<li><p>No gradients are computed; the model is run in evaluation mode.</p></li>
+<li><p>The method supports multiple algorithms: ‘WATRES’, ‘AgeDomain’, and ‘Weibull’.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WATRES.results.Results.compute_results">
+<span class="sig-name descname"><span class="pre">compute_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">BATCH_SIZE</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_test</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">25920</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pathsite_ground_truth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">site_ground_truth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_training_results</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/results.html#Results.compute_results"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.results.Results.compute_results" title="Link to this definition">#</a></dt>
+<dd><p>Computes and saves various statistics and results for model evaluation and visualization.
+This method precomputes and stores statistics such as model predictions, errors, and hydrological metrics
+for both training and test datasets. It supports multiple algorithms (WATRES, AgeDomain, Weibull) and can
+optionally save training results. The results are saved in a pickle file for later analysis and visualization.
+:type BATCH_SIZE: default: <code class="docutils literal notranslate"><span class="pre">None</span></code>
+:param BATCH_SIZE: Number of test samples to process in a batch. If None, defaults to n_test-5.
+:type BATCH_SIZE: int, optional
+:type n_test: default: <code class="docutils literal notranslate"><span class="pre">25920</span></code>
+:param n_test: Number of test samples to evaluate. Default is 360*24*3.
+:type n_test: int, optional
+:type pathsite_ground_truth: default: <code class="docutils literal notranslate"><span class="pre">None</span></code>
+:param pathsite_ground_truth: Path to the directory containing ground truth data. If None, defaults to self.pathsite/data.
+:type pathsite_ground_truth: str, optional
+:type site_ground_truth: default: <code class="docutils literal notranslate"><span class="pre">None</span></code>
+:param site_ground_truth: Site name for ground truth data. If None, defaults to self.site.
+:type site_ground_truth: str, optional
+:type save_training_results: default: <code class="docutils literal notranslate"><span class="pre">False</span></code>
+:param save_training_results: If True, computes and saves results for the training set as well.
+:type save_training_results: bool, optional</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>result : dict
+Dictionary containing computed statistics and results, including:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>’lst_train’, ‘lst_test’: Indices of training and test samples.</p></li>
+<li><p>’Cout_train’, ‘Cout’: True output concentrations for train/test.</p></li>
+<li><p>’Chat_train’, ‘Chat’: Predicted output concentrations for train/test.</p></li>
+<li><p>’ywfhat_train’, ‘ywfhat’: Predicted young water fractions for train/test.</p></li>
+<li><p>’PQhat_train’, ‘global_PQhat’: Predicted cumulative transit time distributions (TTDs).</p></li>
+<li><p>’Q_test’: Discharge values for test samples.</p></li>
+<li><p>’w_winter’, ‘w_summer’: Seasonal Weibull parameters (if applicable).</p></li>
+<li><p>’alpha’, ‘alpha_train’: Model-specific parameters (if applicable).</p></li>
+<li><p>’global_PQtrue’, ‘quantile*_PQtrue’: Ground truth cumulative TTDs (if available).</p></li>
+<li><p>’ERROR_Cout’, ‘ERROR_Cout_train’: Prediction errors for output concentrations.</p></li>
+<li><p>’ERROR_ywf’, ‘ERROR_global_ywf’: Errors for young water fraction predictions.</p></li>
+<li><p>’ERROR_global_PQ’, ‘ERROR_quantilesQ_PQ’: Errors for cumulative TTDs.</p></li>
+<li><p>’SThat’, ‘ST_true’: Predicted and true storage time distributions (if available).</p></li>
+<li><p>’ERROR_ST’: Errors for storage time distributions.</p></li>
+<li><p>Additional intermediate and diagnostic results.</p></li>
+</ul>
+</div></blockquote>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>This method loads the trained model from disk and evaluates it on the specified datasets.</p></li>
+<li><p>If ground truth TTD or storage data is unavailable, related results will be omitted.</p></li>
+<li><p>Results are saved as a pickle file in the ‘save’ directory of the site path.</p></li>
+<li><p>Requires external dependencies: torch, numpy, pandas, pyreadr, pickle, and lightning_interface.</p></li>
+</ul>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="watres-uncertainties-module">
+<h2>WATRES.uncertainties module<a class="headerlink" href="#watres-uncertainties-module" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-WATRES.utils">
+<span id="watres-utils-module"></span><h2>WATRES.utils module<a class="headerlink" href="#module-WATRES.utils" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.utils.fractional_year_to_datetime">
+<span class="sig-prename descclassname"><span class="pre">WATRES.utils.</span></span><span class="sig-name descname"><span class="pre">fractional_year_to_datetime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fractional_year</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/utils.html#fractional_year_to_datetime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.utils.fractional_year_to_datetime" title="Link to this definition">#</a></dt>
+<dd><p>Converts a fractional year (e.g., 2023.5) to a datetime object rounded to the nearest hour.
+The fractional part is interpreted as the fraction of the year that has elapsed.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.utils.datetime2year_month">
+<span class="sig-prename descclassname"><span class="pre">WATRES.utils.</span></span><span class="sig-name descname"><span class="pre">datetime2year_month</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/utils.html#datetime2year_month"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.utils.datetime2year_month" title="Link to this definition">#</a></dt>
+<dd><p>Converts a datetime object to a string in the format ‘YYYY-M’.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.utils.get_clusters_time_points">
+<span class="sig-prename descclassname"><span class="pre">WATRES.utils.</span></span><span class="sig-name descname"><span class="pre">get_clusters_time_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pathdata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nbclusts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_cout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/utils.html#get_clusters_time_points"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.utils.get_clusters_time_points" title="Link to this definition">#</a></dt>
+<dd><p>Clusters time points in ‘lst’ into ‘nbclusts’ clusters based on quantiles of Q or Cout values.
+Loads data from pathdata, and returns a list of clusters (each cluster is a list of indices).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.utils.get_clusters_time_points_subsequence">
+<span class="sig-prename descclassname"><span class="pre">WATRES.utils.</span></span><span class="sig-name descname"><span class="pre">get_clusters_time_points_subsequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pathdata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nbclusts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_cout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/utils.html#get_clusters_time_points_subsequence"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.utils.get_clusters_time_points_subsequence" title="Link to this definition">#</a></dt>
+<dd><p>Clusters time points in ‘lst’ into ‘nbclusts’ clusters by sorting Q or Cout values and splitting into equal-sized groups.
+Returns a list of clusters (each cluster is a numpy array of indices).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.utils.fit_sin">
+<span class="sig-prename descclassname"><span class="pre">WATRES.utils.</span></span><span class="sig-name descname"><span class="pre">fit_sin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/utils.html#fit_sin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.utils.fit_sin" title="Link to this definition">#</a></dt>
+<dd><p>Fits a sinusoidal function to the input time sequence (tt, yy).
+Returns a dictionary with amplitude, phase, offset, fit function, max covariance, and raw results.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.utils.get_ampli">
+<span class="sig-prename descclassname"><span class="pre">WATRES.utils.</span></span><span class="sig-name descname"><span class="pre">get_ampli</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_noiseless_CJ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/utils.html#get_ampli"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.utils.get_ampli" title="Link to this definition">#</a></dt>
+<dd><p>Computes the amplitude of a sinusoidal fit to the data[name_data] time series.
+Optionally plots the data and fit. If use_noiseless_CJ is True, uses fixed coefficients for the fit.
+Returns the absolute value of the amplitude.</p>
+</dd></dl>
+
+</section>
+<section id="module-WATRES.visualization">
+<span id="watres-visualization-module"></span><h2>WATRES.visualization module<a class="headerlink" href="#module-WATRES.visualization" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.visualization.get_names_algos">
+<span class="sig-prename descclassname"><span class="pre">WATRES.visualization.</span></span><span class="sig-name descname"><span class="pre">get_names_algos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">results</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algo2name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/visualization.html#get_names_algos"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.visualization.get_names_algos" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.visualization.show_global_cum_ttd">
+<span class="sig-prename descclassname"><span class="pre">WATRES.visualization.</span></span><span class="sig-name descname"><span class="pre">show_global_cum_ttd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">results</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algo2name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/visualization.html#show_global_cum_ttd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.visualization.show_global_cum_ttd" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.visualization.show_Cout">
+<span class="sig-prename descclassname"><span class="pre">WATRES.visualization.</span></span><span class="sig-name descname"><span class="pre">show_Cout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">settings_algos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algo2name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/visualization.html#show_Cout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.visualization.show_Cout" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.visualization.gather_results_all_sites">
+<span class="sig-prename descclassname"><span class="pre">WATRES.visualization.</span></span><span class="sig-name descname"><span class="pre">gather_results_all_sites</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">settings_algos</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/visualization.html#gather_results_all_sites"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.visualization.gather_results_all_sites" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.visualization.show_errors">
+<span class="sig-prename descclassname"><span class="pre">WATRES.visualization.</span></span><span class="sig-name descname"><span class="pre">show_errors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">results</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algo2name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">err</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ERROR_Cout'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/visualization.html#show_errors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.visualization.show_errors" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.visualization.show_errors_Cout">
+<span class="sig-prename descclassname"><span class="pre">WATRES.visualization.</span></span><span class="sig-name descname"><span class="pre">show_errors_Cout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">settings_algos</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/visualization.html#show_errors_Cout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.visualization.show_errors_Cout" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.visualization.show_errors_global_ttd">
+<span class="sig-prename descclassname"><span class="pre">WATRES.visualization.</span></span><span class="sig-name descname"><span class="pre">show_errors_global_ttd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">settings_algos</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/visualization.html#show_errors_global_ttd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.visualization.show_errors_global_ttd" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.visualization.show_violin_ywf">
+<span class="sig-prename descclassname"><span class="pre">WATRES.visualization.</span></span><span class="sig-name descname"><span class="pre">show_violin_ywf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">results</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algo2name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/visualization.html#show_violin_ywf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.visualization.show_violin_ywf" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.visualization.get_colors_rainbow">
+<span class="sig-prename descclassname"><span class="pre">WATRES.visualization.</span></span><span class="sig-name descname"><span class="pre">get_colors_rainbow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">K</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/visualization.html#get_colors_rainbow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.visualization.get_colors_rainbow" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.visualization.show_quantile_ywf_single_figure">
+<span class="sig-prename descclassname"><span class="pre">WATRES.visualization.</span></span><span class="sig-name descname"><span class="pre">show_quantile_ywf_single_figure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">results</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">months_ywf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algo2name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">site2name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/visualization.html#show_quantile_ywf_single_figure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.visualization.show_quantile_ywf_single_figure" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.visualization.show_quantile_ywf">
+<span class="sig-prename descclassname"><span class="pre">WATRES.visualization.</span></span><span class="sig-name descname"><span class="pre">show_quantile_ywf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">results</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">months_ywf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algo2name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">site2name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/visualization.html#show_quantile_ywf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.visualization.show_quantile_ywf" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.visualization.show_TS_ywf">
+<span class="sig-prename descclassname"><span class="pre">WATRES.visualization.</span></span><span class="sig-name descname"><span class="pre">show_TS_ywf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">results</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algo2name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/visualization.html#show_TS_ywf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.visualization.show_TS_ywf" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.visualization.show_ywf">
+<span class="sig-prename descclassname"><span class="pre">WATRES.visualization.</span></span><span class="sig-name descname"><span class="pre">show_ywf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">results</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algo2name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">site2name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/visualization.html#show_ywf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.visualization.show_ywf" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-WATRES">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-WATRES" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../presentation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Presentation of the project</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="WATRES.models.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">WATRES.models package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-WATRES.WATRES">WATRES.WATRES module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.WATRES.WATRES"><code class="docutils literal notranslate"><span class="pre">WATRES</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.WATRES.WATRES.load_model"><code class="docutils literal notranslate"><span class="pre">WATRES.load_model()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.WATRES.WATRES.train"><code class="docutils literal notranslate"><span class="pre">WATRES.train()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-WATRES.dataset">WATRES.dataset module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.dataset.Dataset"><code class="docutils literal notranslate"><span class="pre">Dataset</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.dataset.Dataset.datetime2year_month"><code class="docutils literal notranslate"><span class="pre">Dataset.datetime2year_month()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.dataset.Dataset.get_time_points"><code class="docutils literal notranslate"><span class="pre">Dataset.get_time_points()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.dataset.Dataset.get_features"><code class="docutils literal notranslate"><span class="pre">Dataset.get_features()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.dataset.Dataset.get_data"><code class="docutils literal notranslate"><span class="pre">Dataset.get_data()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-WATRES.results">WATRES.results module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.results.global_average"><code class="docutils literal notranslate"><span class="pre">global_average()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.results.average_by_Qquantiles"><code class="docutils literal notranslate"><span class="pre">average_by_Qquantiles()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.results.Results"><code class="docutils literal notranslate"><span class="pre">Results</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.results.Results.model_estimate"><code class="docutils literal notranslate"><span class="pre">Results.model_estimate()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.results.Results.compute_results"><code class="docutils literal notranslate"><span class="pre">Results.compute_results()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#watres-uncertainties-module">WATRES.uncertainties module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-WATRES.utils">WATRES.utils module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.utils.fractional_year_to_datetime"><code class="docutils literal notranslate"><span class="pre">fractional_year_to_datetime()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.utils.datetime2year_month"><code class="docutils literal notranslate"><span class="pre">datetime2year_month()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.utils.get_clusters_time_points"><code class="docutils literal notranslate"><span class="pre">get_clusters_time_points()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.utils.get_clusters_time_points_subsequence"><code class="docutils literal notranslate"><span class="pre">get_clusters_time_points_subsequence()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.utils.fit_sin"><code class="docutils literal notranslate"><span class="pre">fit_sin()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.utils.get_ampli"><code class="docutils literal notranslate"><span class="pre">get_ampli()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-WATRES.visualization">WATRES.visualization module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.visualization.get_names_algos"><code class="docutils literal notranslate"><span class="pre">get_names_algos()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.visualization.show_global_cum_ttd"><code class="docutils literal notranslate"><span class="pre">show_global_cum_ttd()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.visualization.show_Cout"><code class="docutils literal notranslate"><span class="pre">show_Cout()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.visualization.gather_results_all_sites"><code class="docutils literal notranslate"><span class="pre">gather_results_all_sites()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.visualization.show_errors"><code class="docutils literal notranslate"><span class="pre">show_errors()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.visualization.show_errors_Cout"><code class="docutils literal notranslate"><span class="pre">show_errors_Cout()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.visualization.show_errors_global_ttd"><code class="docutils literal notranslate"><span class="pre">show_errors_global_ttd()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.visualization.show_violin_ywf"><code class="docutils literal notranslate"><span class="pre">show_violin_ywf()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.visualization.get_colors_rainbow"><code class="docutils literal notranslate"><span class="pre">get_colors_rainbow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.visualization.show_quantile_ywf_single_figure"><code class="docutils literal notranslate"><span class="pre">show_quantile_ywf_single_figure()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.visualization.show_quantile_ywf"><code class="docutils literal notranslate"><span class="pre">show_quantile_ywf()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.visualization.show_TS_ywf"><code class="docutils literal notranslate"><span class="pre">show_TS_ywf()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.visualization.show_ywf"><code class="docutils literal notranslate"><span class="pre">show_ywf()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-WATRES">Module contents</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/documentation/WATRES.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Q.Duchemin and P.Benettin.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

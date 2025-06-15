@@ -1,0 +1,854 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WATRES.visualization &#8212; WATRES</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/override.css?v=dd5beb26" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/sphinx_gallery.css?v=370a08b5" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_logo.css?v=f521e7f3" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=29a6c3e3"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/tabs.js?v=3030b3cb"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/WATRES/visualization';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">WATRES</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../presentation.html">
+    Presentation of the project
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../documentation/WATRES.html">
+    WATRES package
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../developer/index.html">
+    Developer
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../references.html">
+    References
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../team.html">
+    Team
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../presentation.html">
+    Presentation of the project
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../documentation/WATRES.html">
+    WATRES package
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../developer/index.html">
+    Developer
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../references.html">
+    References
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../team.html">
+    Team
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">WATRES.visualization</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for WATRES.visualization</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">lightning_interface</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">pyreadr</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="kn">import</span> <span class="n">ScalarFormatter</span>
+
+
+<div class="viewcode-block" id="get_names_algos">
+<a class="viewcode-back" href="../../documentation/WATRES.html#WATRES.visualization.get_names_algos">[docs]</a>
+<span class="k">def</span> <span class="nf">get_names_algos</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">algo2name</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">algo2name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">algo2name</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">site</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">algo</span> <span class="ow">in</span> <span class="n">results</span><span class="p">[</span><span class="n">site</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">algo2name</span><span class="p">[</span><span class="n">algo</span><span class="p">]</span> <span class="o">=</span> <span class="n">algo</span>
+    <span class="k">return</span> <span class="n">algo2name</span></div>
+
+
+
+<div class="viewcode-block" id="show_global_cum_ttd">
+<a class="viewcode-back" href="../../documentation/WATRES.html#WATRES.visualization.show_global_cum_ttd">[docs]</a>
+<span class="k">def</span> <span class="nf">show_global_cum_ttd</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">algo2name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">x_abs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6900</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">24</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">count_fig</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">site</span><span class="p">,</span> <span class="n">res_site</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">algo</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">res_site</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">count_fig</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_abs</span><span class="p">,</span> <span class="n">results</span><span class="p">[</span><span class="n">site</span><span class="p">][</span><span class="n">algo</span><span class="p">][</span><span class="s1">&#39;global_PQhat&#39;</span><span class="p">][:</span><span class="mi">6900</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Prediction&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_abs</span><span class="p">,</span> <span class="n">results</span><span class="p">[</span><span class="n">site</span><span class="p">][</span><span class="n">algo</span><span class="p">][</span><span class="s1">&#39;global_PQtrue&#39;</span><span class="p">][:</span><span class="mi">6900</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Ground truth&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Age (in Months)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Global cumulative TTD&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">site</span><span class="o">+</span><span class="s1">&#39;  &#39;</span><span class="o">+</span><span class="n">algo2name</span><span class="p">[</span><span class="n">algo</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+            <span class="n">count_fig</span> <span class="o">+=</span> <span class="mi">1</span></div>
+
+
+
+
+<div class="viewcode-block" id="show_Cout">
+<a class="viewcode-back" href="../../documentation/WATRES.html#WATRES.visualization.show_Cout">[docs]</a>
+<span class="k">def</span> <span class="nf">show_Cout</span><span class="p">(</span><span class="n">settings_algos</span><span class="p">,</span> <span class="n">n_start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_end</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">algo2name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">algo2name</span> <span class="o">=</span> <span class="n">get_names_algos</span><span class="p">(</span><span class="n">settings_algos</span><span class="p">,</span> <span class="n">algo2name</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">settings_algos</span><span class="p">)):</span>
+        <span class="n">site</span> <span class="o">=</span> <span class="n">settings_algos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;site&#39;</span><span class="p">]</span>
+        <span class="n">algo</span> <span class="o">=</span> <span class="n">settings_algos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;algo&#39;</span><span class="p">]</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">settings_algos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;path_results&#39;</span><span class="p">],</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">input_file</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span>  
+        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">ScalarFormatter</span><span class="p">(</span><span class="n">useOffset</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">useMathText</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+        <span class="n">lst_test</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;timeyear_test&#39;</span><span class="p">][:</span><span class="n">n_end</span><span class="p">][</span><span class="n">n_start</span><span class="p">:]</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">lst_test</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;Chat&#39;</span><span class="p">][:</span><span class="n">n_end</span><span class="p">][</span><span class="n">n_start</span><span class="p">:],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lst_test</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;Chat&#39;</span><span class="p">][:</span><span class="n">n_end</span><span class="p">][</span><span class="n">n_start</span><span class="p">:],</span>  <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Predicted&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">lst_test</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;Cout&#39;</span><span class="p">][:</span><span class="n">n_end</span><span class="p">][</span><span class="n">n_start</span><span class="p">:],</span>  <span class="n">c</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lst_test</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;Cout&#39;</span><span class="p">][:</span><span class="n">n_end</span><span class="p">][</span><span class="n">n_start</span><span class="p">:],</span>  <span class="n">c</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Ground truth&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">site</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="n">algo2name</span><span class="p">[</span><span class="n">algo</span><span class="p">])</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Output tracer&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="gather_results_all_sites">
+<a class="viewcode-back" href="../../documentation/WATRES.html#WATRES.visualization.gather_results_all_sites">[docs]</a>
+<span class="k">def</span> <span class="nf">gather_results_all_sites</span><span class="p">(</span><span class="n">settings_algos</span><span class="p">):</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">settings_algos</span><span class="p">)):</span>
+        <span class="n">site</span> <span class="o">=</span> <span class="n">settings_algos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;site&#39;</span><span class="p">]</span>
+        <span class="n">algo</span> <span class="o">=</span> <span class="n">settings_algos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;algo&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">site</span> <span class="ow">in</span> <span class="n">results</span><span class="p">):</span>
+            <span class="n">results</span><span class="p">[</span><span class="n">site</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">settings_algos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;path_results&#39;</span><span class="p">],</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">input_file</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span>
+            <span class="n">results</span><span class="p">[</span><span class="n">site</span><span class="p">][</span><span class="n">algo</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">results</span></div>
+
+        
+<div class="viewcode-block" id="show_errors">
+<a class="viewcode-back" href="../../documentation/WATRES.html#WATRES.visualization.show_errors">[docs]</a>
+<span class="k">def</span> <span class="nf">show_errors</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">algo2name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">err</span><span class="o">=</span><span class="s1">&#39;ERROR_Cout&#39;</span><span class="p">):</span>
+    <span class="c1"># ls_errors = [&#39;ERROR_Cout&#39;, &#39;ERROR_global_PQ&#39;]</span>
+    <span class="n">algo2name</span> <span class="o">=</span> <span class="n">get_names_algos</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">algo2name</span><span class="p">)</span>
+    <span class="n">errors</span> <span class="o">=</span> <span class="p">[</span><span class="n">err</span><span class="p">]</span>
+    <span class="n">count_fig</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">markers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;*&#39;</span><span class="p">,</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;brown&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">]</span>
+    <span class="n">mark</span> <span class="o">=</span> <span class="p">{</span><span class="n">algo</span><span class="p">:</span><span class="n">markers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">algo</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">algo2name</span><span class="o">.</span><span class="n">keys</span><span class="p">()))}</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="p">{</span><span class="n">algo</span><span class="p">:</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">algo</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">algo2name</span><span class="o">.</span><span class="n">keys</span><span class="p">()))}</span>
+    <span class="n">tickslabel</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">site</span><span class="p">,</span> <span class="n">res_site</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">count_fig</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">algo</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">res_site</span><span class="p">[</span><span class="n">site</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">count_fig</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">count_fig</span><span class="p">],</span> <span class="p">[</span><span class="n">value</span><span class="p">[</span><span class="n">error</span><span class="p">]</span> <span class="k">for</span> <span class="n">error</span> <span class="ow">in</span> <span class="n">errors</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">algo2name</span><span class="p">[</span><span class="n">algo</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="n">mark</span><span class="p">[</span><span class="n">algo</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">[</span><span class="n">algo</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">count_fig</span><span class="p">],</span> <span class="p">[</span><span class="n">value</span><span class="p">[</span><span class="n">error</span><span class="p">]</span> <span class="k">for</span> <span class="n">error</span> <span class="ow">in</span> <span class="n">errors</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="n">mark</span><span class="p">[</span><span class="n">algo</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">[</span><span class="n">algo</span><span class="p">])</span>
+        <span class="n">tickslabel</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">site</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">count_fig</span><span class="o">+</span><span class="mi">1</span><span class="p">)),</span> <span class="n">tickslabel</span><span class="p">,</span> <span class="n">rotation</span> <span class="o">=</span> <span class="mi">90</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">errors</span><span class="o">==</span><span class="p">[</span><span class="s1">&#39;ERROR_Cout&#39;</span><span class="p">]:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Error on the output concentration&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Error on the global age distribution&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="c1">#plt.savefig(&#39;/data/quentin/code/final_models/BERT/BERT_multi_MODEL_standard_improved/results_paper/figures/&#39;+err+&#39;.png&#39;, dpi=300, bbox_inches=&quot;tight&quot;)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div>
+
+    
+<div class="viewcode-block" id="show_errors_Cout">
+<a class="viewcode-back" href="../../documentation/WATRES.html#WATRES.visualization.show_errors_Cout">[docs]</a>
+<span class="k">def</span> <span class="nf">show_errors_Cout</span><span class="p">(</span><span class="n">settings_algos</span><span class="p">):</span>
+    <span class="n">show_errors</span><span class="p">(</span><span class="n">settings_algos</span><span class="p">,</span> <span class="n">err</span><span class="o">=</span><span class="s1">&#39;ERROR_Cout&#39;</span><span class="p">)</span></div>
+
+    
+<div class="viewcode-block" id="show_errors_global_ttd">
+<a class="viewcode-back" href="../../documentation/WATRES.html#WATRES.visualization.show_errors_global_ttd">[docs]</a>
+<span class="k">def</span> <span class="nf">show_errors_global_ttd</span><span class="p">(</span><span class="n">settings_algos</span><span class="p">):</span>
+    <span class="n">show_errors</span><span class="p">(</span><span class="n">settings_algos</span><span class="p">,</span> <span class="n">err</span><span class="o">=</span><span class="s1">&#39;ERROR_global_PQ&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="show_violin_ywf">
+<a class="viewcode-back" href="../../documentation/WATRES.html#WATRES.visualization.show_violin_ywf">[docs]</a>
+<span class="k">def</span> <span class="nf">show_violin_ywf</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">algo2name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">algo2name</span> <span class="o">=</span> <span class="n">get_names_algos</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">algo2name</span><span class="p">)</span>
+    <span class="n">idxalgo</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">algo</span><span class="p">,</span> <span class="n">name_algo</span> <span class="ow">in</span> <span class="n">algo2name</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">idxalgo</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">dataset</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">lsywf</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">real_or_esti</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">tickslabel</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">idxalgo</span><span class="p">)</span>
+    
+        <span class="k">for</span> <span class="n">site</span><span class="p">,</span> <span class="n">res_site</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">esti_ywf</span> <span class="o">=</span> <span class="n">res_site</span><span class="p">[</span><span class="n">algo</span><span class="p">][</span><span class="s1">&#39;ywfhat&#39;</span><span class="p">][:,</span><span class="mi">4</span><span class="p">]</span>
+            <span class="n">dataset</span> <span class="o">+=</span> <span class="p">[</span><span class="n">site</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">esti_ywf</span><span class="p">)</span>
+            <span class="n">lsywf</span> <span class="o">+=</span> <span class="nb">list</span><span class="p">(</span><span class="n">esti_ywf</span><span class="p">)</span>
+            <span class="n">true_ywf</span> <span class="o">=</span> <span class="n">res_site</span><span class="p">[</span><span class="n">algo</span><span class="p">][</span><span class="s1">&#39;ywf_true&#39;</span><span class="p">][:,</span><span class="mi">4</span><span class="p">]</span>
+            <span class="n">lsywf</span> <span class="o">+=</span> <span class="nb">list</span><span class="p">(</span><span class="n">true_ywf</span><span class="p">)</span>
+            <span class="n">real_or_esti</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;Predicted&#39;</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">esti_ywf</span><span class="p">)</span>
+            <span class="n">real_or_esti</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;Ground truth&#39;</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">esti_ywf</span><span class="p">)</span>
+            <span class="n">tickslabel</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">site</span><span class="p">)</span>
+    
+        <span class="n">df</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;dataset&#39;</span><span class="p">:</span> <span class="n">dataset</span><span class="p">,</span> <span class="s1">&#39;ywf&#39;</span><span class="p">:</span> <span class="n">lsywf</span><span class="p">,</span> <span class="s1">&#39;real_or_esti&#39;</span><span class="p">:</span><span class="n">real_or_esti</span><span class="p">}</span>
+    
+        <span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;dataset&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;ywf&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;real_or_esti&quot;</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">tickslabel</span><span class="p">))),</span> <span class="n">tickslabel</span><span class="p">,</span> <span class="n">rotation</span> <span class="o">=</span> <span class="mi">90</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span><span class="n">ncol</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Model: &#39;</span><span class="o">+</span><span class="n">name_algo</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+                <span class="c1">#plt.savefig(&#39;/data/quentin/code/final_models/BERT/BERT_multi_MODEL_standard_improved/results_paper3_guided/figures/violin_ywf&#39;+algo_ref+&#39;_&#39;+label_concen+&#39;.png&#39;, dpi=300, bbox_inches=&quot;tight&quot;)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div>
+
+
+
+
+<span class="kn">import</span> <span class="nn">matplotlib.cm</span> <span class="k">as</span> <span class="nn">cm</span>
+<span class="kn">import</span> <span class="nn">colorsys</span>
+
+<div class="viewcode-block" id="get_colors_rainbow">
+<a class="viewcode-back" href="../../documentation/WATRES.html#WATRES.visualization.get_colors_rainbow">[docs]</a>
+<span class="k">def</span> <span class="nf">get_colors_rainbow</span><span class="p">(</span><span class="n">K</span> <span class="o">=</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">rainbow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">K</span><span class="p">))</span>
+    <span class="c1"># Reduce brightness by converting RGB to HSV and adjusting Value (V)</span>
+    <span class="n">adjusted_colors</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="p">:</span>
+        <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">color</span>
+        <span class="n">h</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">colorsys</span><span class="o">.</span><span class="n">rgb_to_hsv</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">v</span> <span class="o">*</span> <span class="mf">0.8</span>  <span class="c1"># Reduce brightness to 70% of original</span>
+        <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">colorsys</span><span class="o">.</span><span class="n">hsv_to_rgb</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+        <span class="n">adjusted_colors</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">adjusted_colors</span></div>
+
+
+<div class="viewcode-block" id="show_quantile_ywf_single_figure">
+<a class="viewcode-back" href="../../documentation/WATRES.html#WATRES.visualization.show_quantile_ywf_single_figure">[docs]</a>
+<span class="k">def</span> <span class="nf">show_quantile_ywf_single_figure</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">nb_groups</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">months_ywf</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">algo2name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">site2name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">matplotlib.lines</span> <span class="kn">import</span> <span class="n">Line2D</span>
+    <span class="k">if</span> <span class="n">site2name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">site2name</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="n">count_site</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">algo2name</span> <span class="o">=</span> <span class="n">get_names_algos</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">algo2name</span><span class="p">)</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">get_colors_rainbow</span><span class="p">(</span><span class="n">K</span><span class="o">=</span><span class="n">nb_groups</span><span class="p">))</span>
+    <span class="n">markers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot;v&quot;</span><span class="p">,</span> <span class="s2">&quot;P&quot;</span><span class="p">]</span>
+
+    <span class="n">min_val_glob</span><span class="p">,</span> <span class="n">max_val_glob</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">site</span><span class="p">,</span> <span class="n">res_site</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">count_site</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">algo</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">res_site</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">Q_test</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="s1">&#39;Q_test&#39;</span><span class="p">]</span>
+            <span class="c1"># Get quantile bins (10 quantiles)</span>
+            <span class="n">quantile_bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">Q_test</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nb_groups</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+            <span class="c1"># Assign each value to a quantile bin</span>
+            <span class="n">quantile_indexes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">digitize</span><span class="p">(</span><span class="n">Q_test</span><span class="p">,</span> <span class="n">quantile_bins</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="c1"># Create a dictionary to hold the indexes for each group</span>
+            <span class="n">grouped_indexes</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">quantile_indexes</span> <span class="o">==</span> <span class="n">i</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nb_groups</span><span class="o">+</span><span class="mi">1</span><span class="p">)}</span>
+
+            <span class="n">data_pred</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">data_true</span> <span class="o">=</span> <span class="p">[]</span>
+            
+            <span class="k">for</span> <span class="n">idx_group</span><span class="p">,</span> <span class="n">idxs</span> <span class="ow">in</span> <span class="n">grouped_indexes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">idxs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">data_pred</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="s1">&#39;ywfhat&#39;</span><span class="p">][:,</span> <span class="n">months_ywf</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">idxs</span><span class="p">]))</span>
+                    <span class="n">data_true</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="s1">&#39;ywf_true&#39;</span><span class="p">][:,</span> <span class="n">months_ywf</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">idxs</span><span class="p">]))</span>
+
+            <span class="c1"># Find the axis limits based on the data</span>
+            <span class="n">all_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">data_pred</span><span class="p">,</span> <span class="n">data_true</span><span class="p">))</span>
+            <span class="n">min_val</span><span class="p">,</span> <span class="n">max_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">all_data</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">all_data</span><span class="p">)</span>
+            <span class="n">max_val_glob</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">max_val_glob</span><span class="p">,</span> <span class="n">max_val</span><span class="p">])</span>
+            <span class="n">min_val_glob</span> <span class="o">=</span> <span class="nb">min</span><span class="p">([</span><span class="n">min_val_glob</span><span class="p">,</span> <span class="n">min_val</span><span class="p">])</span>
+
+            
+            <span class="c1"># Plot with different colors for each group and create a legend entry</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nb_groups</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">grouped_indexes</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">grouped_indexes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+                        <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="s1">&#39;ywfhat&#39;</span><span class="p">][:,</span> <span class="n">months_ywf</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">grouped_indexes</span><span class="p">[</span><span class="n">i</span><span class="p">]]),</span>
+                        <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="s1">&#39;ywf_true&#39;</span><span class="p">][:,</span> <span class="n">months_ywf</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">grouped_indexes</span><span class="p">[</span><span class="n">i</span><span class="p">]]),</span>
+                        <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+                        <span class="n">marker</span><span class="o">=</span><span class="n">markers</span><span class="p">[</span><span class="n">count_site</span><span class="p">]</span>
+                    <span class="p">)</span>
+    
+                    
+    <span class="c1"># Set the same limits for x and y axes</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">min_val_glob</span><span class="p">,</span> <span class="n">max_val_glob</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">min_val_glob</span><span class="p">,</span> <span class="n">max_val_glob</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">min_val_glob</span><span class="p">,</span> <span class="n">max_val_glob</span><span class="p">],</span> <span class="p">[</span><span class="n">min_val_glob</span><span class="p">,</span> <span class="n">max_val_glob</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Ground truth&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="c1"># Custom legend for colors (Streamflow quantiles)</span>
+    <span class="n">color_legend</span> <span class="o">=</span> <span class="p">[</span><span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">markerfacecolor</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nb_groups</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+    <span class="n">quantile_legend</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">color_legend</span><span class="p">,</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;Q</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nb_groups</span><span class="o">+</span><span class="mi">1</span><span class="p">)],</span> 
+                                 <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Streamflow quantiles&quot;</span><span class="p">,</span>
+                                 <span class="n">loc</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.93</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">),</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="c1"># Add the color legend to the plot</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">quantile_legend</span><span class="p">)</span>
+
+    <span class="c1"># Custom legend for markers (Sites)</span>
+    <span class="n">marker_legend</span> <span class="o">=</span> <span class="p">[</span><span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="n">markers</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+                     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">site2name</span><span class="p">))]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">marker_legend</span><span class="p">,</span> <span class="n">site2name</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Sites&quot;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">),</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="show_quantile_ywf">
+<a class="viewcode-back" href="../../documentation/WATRES.html#WATRES.visualization.show_quantile_ywf">[docs]</a>
+<span class="k">def</span> <span class="nf">show_quantile_ywf</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">nb_groups</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">months_ywf</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">algo2name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">site2name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">site2name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">site2name</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">algo2name</span> <span class="o">=</span> <span class="n">get_names_algos</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">algo2name</span><span class="p">)</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">get_colors_rainbow</span><span class="p">(</span><span class="n">K</span><span class="o">=</span><span class="n">nb_groups</span><span class="p">))</span>
+    <span class="n">markers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;^&quot;</span><span class="p">,</span> <span class="s2">&quot;v&quot;</span><span class="p">,</span> <span class="s2">&quot;P&quot;</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">site</span><span class="p">,</span> <span class="n">res_site</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">algo</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">res_site</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">Q_test</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="s1">&#39;Q_test&#39;</span><span class="p">]</span>
+            <span class="c1"># Get quantile bins (10 quantiles)</span>
+            <span class="n">quantile_bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">Q_test</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nb_groups</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+            <span class="c1"># Assign each value to a quantile bin</span>
+            <span class="n">quantile_indexes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">digitize</span><span class="p">(</span><span class="n">Q_test</span><span class="p">,</span> <span class="n">quantile_bins</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="c1"># Create a dictionary to hold the indexes for each group</span>
+            <span class="n">grouped_indexes</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">quantile_indexes</span> <span class="o">==</span> <span class="n">i</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nb_groups</span><span class="o">+</span><span class="mi">1</span><span class="p">)}</span>
+
+            <span class="n">data_pred</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">data_true</span> <span class="o">=</span> <span class="p">[]</span>
+            
+            <span class="k">for</span> <span class="n">idx_group</span><span class="p">,</span> <span class="n">idxs</span> <span class="ow">in</span> <span class="n">grouped_indexes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">idxs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">data_pred</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="s1">&#39;ywfhat&#39;</span><span class="p">][:,</span> <span class="n">months_ywf</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">idxs</span><span class="p">]))</span>
+                    <span class="n">data_true</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="s1">&#39;ywf_true&#39;</span><span class="p">][:,</span> <span class="n">months_ywf</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">idxs</span><span class="p">]))</span>
+
+            <span class="c1"># Find the axis limits based on the data</span>
+            <span class="n">all_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">data_pred</span><span class="p">,</span> <span class="n">data_true</span><span class="p">))</span>
+            <span class="n">min_val</span><span class="p">,</span> <span class="n">max_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">all_data</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">all_data</span><span class="p">)</span>
+
+            
+            <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+            <span class="c1"># Plot with different colors for each group and create a legend entry</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nb_groups</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">grouped_indexes</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">grouped_indexes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+                        <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="s1">&#39;ywfhat&#39;</span><span class="p">][:,</span> <span class="n">months_ywf</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">grouped_indexes</span><span class="p">[</span><span class="n">i</span><span class="p">]]),</span>
+                        <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="s1">&#39;ywf_true&#39;</span><span class="p">][:,</span> <span class="n">months_ywf</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">grouped_indexes</span><span class="p">[</span><span class="n">i</span><span class="p">]]),</span>
+                        <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+                        <span class="n">marker</span><span class="o">=</span><span class="n">markers</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+                        <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">&#39;</span>
+                    <span class="p">)</span>
+            <span class="c1"># Set the same limits for x and y axes</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">min_val</span><span class="p">,</span> <span class="n">max_val</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">min_val</span><span class="p">,</span> <span class="n">max_val</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">min_val</span><span class="p">,</span> <span class="n">max_val</span><span class="p">],</span> <span class="p">[</span><span class="n">min_val</span><span class="p">,</span> <span class="n">max_val</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Ground truth&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Streamflow quantiles&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">site2name</span><span class="p">[</span><span class="n">site</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span></div>
+
+    
+
+<div class="viewcode-block" id="show_TS_ywf">
+<a class="viewcode-back" href="../../documentation/WATRES.html#WATRES.visualization.show_TS_ywf">[docs]</a>
+<span class="k">def</span> <span class="nf">show_TS_ywf</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">algo2name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">algo2name</span> <span class="o">=</span> <span class="n">get_names_algos</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">algo2name</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">site</span><span class="p">,</span> <span class="n">res_site</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">algo</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">res_site</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="n">site</span><span class="p">][</span><span class="n">algo</span><span class="p">][</span><span class="s1">&#39;timeyear_test&#39;</span><span class="p">],</span> <span class="n">results</span><span class="p">[</span><span class="n">site</span><span class="p">][</span><span class="n">algo</span><span class="p">][</span><span class="s1">&#39;ywf_true&#39;</span><span class="p">][:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Ground truth&quot;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="n">site</span><span class="p">][</span><span class="n">algo</span><span class="p">][</span><span class="s1">&#39;timeyear_test&#39;</span><span class="p">],</span> <span class="n">results</span><span class="p">[</span><span class="n">site</span><span class="p">][</span><span class="n">algo</span><span class="p">][</span><span class="s1">&#39;ywfhat&#39;</span><span class="p">][:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Predicted&quot;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Young Water Fraction (3 months)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">site</span><span class="si">}</span><span class="s1"> | Model: </span><span class="si">{</span><span class="n">algo2name</span><span class="p">[</span><span class="n">algo</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span></div>
+
+
+
+<div class="viewcode-block" id="show_ywf">
+<a class="viewcode-back" href="../../documentation/WATRES.html#WATRES.visualization.show_ywf">[docs]</a>
+<span class="k">def</span> <span class="nf">show_ywf</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">algo2name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">site2name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">size_marker</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">algo2name</span> <span class="o">=</span> <span class="n">get_names_algos</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">algo2name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">site2name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">site2name</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="n">markers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;*&#39;</span><span class="p">,</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;|&#39;</span><span class="p">]</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;brown&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;purple&#39;</span><span class="p">]</span>
+    <span class="n">mark</span> <span class="o">=</span> <span class="p">{</span><span class="n">algo</span><span class="p">:</span><span class="n">markers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">algo</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">algo2name</span><span class="o">.</span><span class="n">keys</span><span class="p">()))}</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="p">{</span><span class="n">algo</span><span class="p">:</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">algo</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">algo2name</span><span class="o">.</span><span class="n">keys</span><span class="p">()))}</span>
+    <span class="n">tickslabel</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">count_fig</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">site</span><span class="p">,</span> <span class="n">res_site</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">count_fig</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">count_algo</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">algo</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">res_site</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">mean_ywf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">res_site</span><span class="p">[</span><span class="n">algo</span><span class="p">][</span><span class="s1">&#39;ywfhat&#39;</span><span class="p">][:,</span> <span class="mi">2</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">count_fig</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">count_fig</span><span class="p">],</span> <span class="n">mean_ywf</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">algo2name</span><span class="p">[</span><span class="n">algo</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="n">mark</span><span class="p">[</span><span class="n">algo</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">[</span><span class="n">algo</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="n">size_marker</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">count_fig</span><span class="p">],</span> <span class="n">mean_ywf</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="n">mark</span><span class="p">[</span><span class="n">algo</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">[</span><span class="n">algo</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="n">size_marker</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+            <span class="n">count_algo</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">count_algo</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">mean_ywf_true</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">res_site</span><span class="p">[</span><span class="n">algo</span><span class="p">][</span><span class="s1">&#39;ywf_true&#39;</span><span class="p">][:,</span><span class="mi">2</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">count_fig</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+                    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">count_fig</span><span class="p">],</span> <span class="n">mean_ywf_true</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Ground truth&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">size_marker</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">count_fig</span><span class="p">],</span> <span class="n">mean_ywf_true</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">size_marker</span><span class="p">)</span>
+
+        <span class="n">tickslabel</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">site2name</span><span class="p">[</span><span class="n">site</span><span class="p">])</span>
+        
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">count_fig</span><span class="o">+</span><span class="mi">1</span><span class="p">)),</span> <span class="n">tickslabel</span><span class="p">,</span> <span class="n">rotation</span> <span class="o">=</span> <span class="mi">90</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span>
+        <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+        <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span>         <span class="c1"># Position legend to the left center</span>
+        <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.12</span><span class="p">),</span>   <span class="c1"># Move it outside the plot, centered vertically</span>
+        <span class="n">ncol</span><span class="o">=</span><span class="mi">2</span>                     <span class="c1"># Set the number of columns</span>
+    <span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Young water fraction&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="c1">#plt.savefig(&#39;/data/quentin/code/final_models/BERT/BERT_multi_MODEL_standard_improved/results_paper3_guided/figures/ywf_values&#39;+&#39;_&#39;+label_concen+&#39;.png&#39;, dpi=300, bbox_inches=&quot;tight&quot;)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Q.Duchemin and P.Benettin.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

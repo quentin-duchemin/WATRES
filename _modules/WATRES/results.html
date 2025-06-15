@@ -1,0 +1,947 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WATRES.results &#8212; WATRES</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/override.css?v=dd5beb26" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/sphinx_gallery.css?v=370a08b5" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom_logo.css?v=f521e7f3" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=29a6c3e3"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/tabs.js?v=3030b3cb"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/WATRES/results';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">WATRES</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../presentation.html">
+    Presentation of the project
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../documentation/WATRES.html">
+    WATRES package
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../developer/index.html">
+    Developer
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../references.html">
+    References
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../team.html">
+    Team
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../presentation.html">
+    Presentation of the project
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../documentation/WATRES.html">
+    WATRES package
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../developer/index.html">
+    Developer
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../references.html">
+    References
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../team.html">
+    Team
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">WATRES.results</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for WATRES.results</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">lightning_interface</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">pyreadr</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<div class="viewcode-block" id="global_average">
+<a class="viewcode-back" href="../../documentation/WATRES.html#WATRES.results.global_average">[docs]</a>
+<span class="k">def</span> <span class="nf">global_average</span><span class="p">(</span><span class="n">PQ_hat</span><span class="p">,</span> <span class="n">ttd</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">PQ_hat</span><span class="p">[:</span><span class="mi">6900</span><span class="p">,:]</span>
+    <span class="n">PQx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">ttd</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:</span><span class="mi">6900</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">PQx</span><span class="o">-</span><span class="n">x</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">6900</span></div>
+
+    
+<div class="viewcode-block" id="average_by_Qquantiles">
+<a class="viewcode-back" href="../../documentation/WATRES.html#WATRES.results.average_by_Qquantiles">[docs]</a>
+<span class="k">def</span> <span class="nf">average_by_Qquantiles</span><span class="p">(</span><span class="n">PQ_hat</span><span class="p">,</span> <span class="n">lst</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">ttd</span><span class="p">):</span>
+    <span class="n">length_time</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
+    <span class="n">Qsorted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Q</span><span class="p">)[</span><span class="n">lst</span><span class="p">])</span>
+    <span class="n">quantiles</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="n">errors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.25</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)]:</span>
+         <span class="n">quantiles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Qsorted</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">l</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">Qsorted</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)])</span>    
+
+    <span class="n">clustersQ</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:[]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">quantiles</span><span class="p">))}</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)):</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">quantiles</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">+</span><span class="mf">1e-4</span><span class="o">&lt;=</span><span class="n">Q</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">])]:</span>
+            <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">clustersQ</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">quantiles</span><span class="p">)):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">PQ_hat</span><span class="p">[:</span><span class="mi">6900</span><span class="p">,:]</span>
+        <span class="n">PQx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span><span class="n">clustersQ</span><span class="p">[</span><span class="n">k</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">ttd</span><span class="p">[</span><span class="n">clustersQ</span><span class="p">[</span><span class="n">k</span><span class="p">],:],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:</span><span class="mi">6900</span><span class="p">]</span>
+        <span class="n">errors</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">PQx</span><span class="o">-</span><span class="n">x</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">6900</span>
+    <span class="k">return</span> <span class="n">errors</span></div>
+
+        
+
+<div class="viewcode-block" id="Results">
+<a class="viewcode-back" href="../../documentation/WATRES.html#WATRES.results.Results">[docs]</a>
+<span class="k">class</span> <span class="nc">Results</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Result class of the WATRES package to predict transit time distributions of a given watershed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+        
+<div class="viewcode-block" id="Results.model_estimate">
+<a class="viewcode-back" href="../../documentation/WATRES.html#WATRES.results.Results.model_estimate">[docs]</a>
+    <span class="k">def</span> <span class="nf">model_estimate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filter_dates</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">BATCH_SIZE</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Estimates the cumulative TTDs (Transit Time Distributions) and predicts the output tracer time series using the trained model.</span>
+<span class="sd">        filter_dates : callable, optional</span>
+<span class="sd">            A function that takes an array of fractional years (e.g., [2020.43, 2020.47, ...]) and returns the indices of the time points to keep.</span>
+<span class="sd">            Example:</span>
+<span class="sd">                    return np.where(dates &gt;= 2020)[0]</span>
+<span class="sd">            If None, all available time points are used.</span>
+<span class="sd">        BATCH_SIZE : int, optional</span>
+<span class="sd">            Number of time points (after filtering) to use for model evaluation. If None, all filtered time points are used.</span>
+<span class="sd">            If specified, time points are subsampled evenly across the filtered set.</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        result : dict</span>
+<span class="sd">            Dictionary containing the following keys:</span>
+<span class="sd">                - &#39;time_index&#39;: Indices of the selected time points.</span>
+<span class="sd">                - &#39;timeyear&#39;: Fractional years corresponding to the selected time points.</span>
+<span class="sd">                - &#39;Cout&#39;: True output tracer concentrations for the selected time points (torch.Tensor).</span>
+<span class="sd">                - &#39;Chat&#39;: Predicted output tracer concentrations (numpy.ndarray).</span>
+<span class="sd">                - &#39;ywfhat&#39;: Estimated cumulative TTDs (numpy.ndarray).</span>
+<span class="sd">                - &#39;PQhat&#39;: Cumulative sum of the predicted TTDs (numpy.ndarray).</span>
+<span class="sd">                - &#39;ERROR_Cout&#39;: Normalized L2 error between predicted and true output concentrations.</span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        - The method loads a trained model based on the specified algorithm (`algo` attribute).</span>
+<span class="sd">        - Data is preprocessed and batched according to the provided parameters.</span>
+<span class="sd">        - No gradients are computed; the model is run in evaluation mode.</span>
+<span class="sd">        - The method supports multiple algorithms: &#39;WATRES&#39;, &#39;AgeDomain&#39;, and &#39;Weibull&#39;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">Tmax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Tmax</span>
+        <span class="n">algo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">algo</span>
+        <span class="n">pathsite</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pathsite</span>
+        <span class="n">site</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">site</span>
+
+        <span class="n">J</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">ET</span><span class="p">,</span> <span class="n">CJ</span><span class="p">,</span> <span class="n">Cout</span><span class="p">,</span> <span class="n">timeyear</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">pathsite</span><span class="p">,</span> <span class="n">site</span><span class="p">,</span> <span class="n">include_concentration</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">get_timeyear</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        
+        <span class="k">if</span> <span class="n">filter_dates</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">lst</span> <span class="o">=</span> <span class="n">timeyear</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">lst</span> <span class="o">=</span> <span class="n">filter_dates</span><span class="p">(</span><span class="n">timeyear</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">BATCH_SIZE</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">BATCH_SIZE</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+        <span class="n">BATCH_SIZE</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">([</span><span class="n">BATCH_SIZE</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)])</span>
+        <span class="n">indices</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">BATCH_SIZE</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">BATCH_SIZE</span><span class="p">)]</span>
+
+        <span class="n">lst</span> <span class="o">=</span> <span class="n">lst</span><span class="p">[</span><span class="n">indices</span><span class="p">]</span>
+
+        <span class="n">result</span><span class="p">[</span><span class="s1">&#39;time_index&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lst</span>
+        <span class="n">data_train</span><span class="p">,</span> <span class="n">timeyear_train</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_features</span><span class="p">(</span><span class="n">pathsite</span><span class="p">,</span> <span class="n">site</span><span class="p">,</span> <span class="n">lst</span><span class="p">)</span>
+        <span class="n">input_size</span> <span class="o">=</span> <span class="n">data_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">result</span><span class="p">[</span><span class="s1">&#39;timeyear&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">timeyear_train</span>
+        <span class="k">if</span> <span class="n">algo</span><span class="o">==</span><span class="s1">&#39;WATRES&#39;</span><span class="p">:</span>
+                <span class="n">model</span> <span class="o">=</span> <span class="n">lightning_interface</span><span class="o">.</span><span class="n">LightningWatres</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mean_input_tracer</span><span class="p">,</span> <span class="n">Tmax</span><span class="o">=</span><span class="n">Tmax</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">algo</span><span class="o">==</span><span class="s1">&#39;AgeDomain&#39;</span><span class="p">:</span>
+                <span class="n">model</span> <span class="o">=</span> <span class="n">lightning_interface</span><span class="o">.</span><span class="n">LightningAgeDomain</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">Tmax</span><span class="o">=</span><span class="n">Tmax</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">algo</span><span class="o">==</span><span class="s1">&#39;Weibull&#39;</span><span class="p">:</span>
+                <span class="n">model</span> <span class="o">=</span> <span class="n">lightning_interface</span><span class="o">.</span><span class="n">LightningWeibull</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">Tmax</span><span class="o">=</span><span class="n">Tmax</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path_model</span><span class="p">,</span> <span class="n">weights_only</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;state_dict&#39;</span><span class="p">])</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+    
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>            
+            <span class="n">Cout_train</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>
+            <span class="n">CJ_train</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">),</span> <span class="n">Tmax</span><span class="p">))</span>
+            <span class="n">J_train</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">),</span> <span class="n">Tmax</span><span class="p">))</span>
+            <span class="n">Q_train</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>
+            <span class="n">ET_train</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>
+            <span class="n">Qinv_train</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">),</span><span class="n">Tmax</span><span class="p">))</span>
+            <span class="n">ETinv_train</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">),</span><span class="n">Tmax</span><span class="p">))</span>
+    
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">t</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+                <span class="n">Cout_train</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Cout</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
+                <span class="n">CJ_train</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">CJ</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="n">Tmax</span><span class="p">:</span><span class="n">t</span><span class="p">]</span>
+                <span class="n">J_train</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">J</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="n">Tmax</span><span class="p">:</span><span class="n">t</span><span class="p">]</span>
+                <span class="n">Q_train</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Q</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="n">Tmax</span><span class="p">:</span><span class="n">t</span><span class="p">])</span>
+                <span class="n">ET_train</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ET</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="n">Tmax</span><span class="p">:</span><span class="n">t</span><span class="p">])</span>
+                <span class="n">ETinv_train</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">ET</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="n">Tmax</span><span class="p">:</span><span class="n">t</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="n">Qinv_train</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">Q</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="n">Tmax</span><span class="p">:</span><span class="n">t</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    
+            <span class="k">if</span> <span class="n">algo</span><span class="o">==</span><span class="s1">&#39;AgeDomain&#39;</span><span class="p">:</span>
+                <span class="n">Chat</span><span class="p">,</span> <span class="n">ywfhat</span><span class="p">,</span> <span class="n">pQ</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">data_train</span><span class="p">,</span> <span class="n">J_train</span><span class="p">,</span> <span class="n">CJ_train</span><span class="p">,</span> <span class="n">returnpQ</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">algo</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;WATRES&#39;</span><span class="p">,</span> <span class="s1">&#39;Weibull&#39;</span><span class="p">]:</span>
+                <span class="n">Chat</span><span class="p">,</span> <span class="n">SThat</span><span class="p">,</span> <span class="n">ywfhat</span><span class="p">,</span> <span class="n">pQ</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">data_train</span><span class="p">,</span> <span class="n">J_train</span><span class="p">,</span> <span class="n">CJ_train</span><span class="p">,</span> <span class="n">returnpQ</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    
+            <span class="n">Chat</span><span class="p">,</span> <span class="n">ywfhat</span><span class="p">,</span> <span class="n">pQ</span> <span class="o">=</span> <span class="n">Chat</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">ywfhat</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">pQ</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+    
+            <span class="n">result</span><span class="p">[</span><span class="s1">&#39;Cout&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Cout_train</span>
+            <span class="n">result</span><span class="p">[</span><span class="s1">&#39;Chat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Chat</span>
+            <span class="n">result</span><span class="p">[</span><span class="s1">&#39;ywfhat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ywfhat</span>        
+    
+            <span class="n">PQ_hat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">pQ</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+            <span class="n">result</span><span class="p">[</span><span class="s1">&#39;PQhat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">PQ_hat</span>
+            <span class="n">result</span><span class="p">[</span><span class="s1">&#39;timeyear&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">timeyear_train</span>
+            <span class="n">result</span><span class="p">[</span><span class="s1">&#39;ERROR_Cout&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">Chat</span><span class="o">-</span><span class="n">Cout_train</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span></div>
+
+        
+<div class="viewcode-block" id="Results.compute_results">
+<a class="viewcode-back" href="../../documentation/WATRES.html#WATRES.results.Results.compute_results">[docs]</a>
+    <span class="k">def</span> <span class="nf">compute_results</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">BATCH_SIZE</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">n_test</span><span class="o">=</span><span class="mi">360</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="n">pathsite_ground_truth</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">site_ground_truth</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_training_results</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Computes and saves various statistics and results for model evaluation and visualization.</span>
+<span class="sd">        This method precomputes and stores statistics such as model predictions, errors, and hydrological metrics</span>
+<span class="sd">        for both training and test datasets. It supports multiple algorithms (WATRES, AgeDomain, Weibull) and can</span>
+<span class="sd">        optionally save training results. The results are saved in a pickle file for later analysis and visualization.</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        BATCH_SIZE : int, optional</span>
+<span class="sd">            Number of test samples to process in a batch. If None, defaults to n_test-5.</span>
+<span class="sd">        n_test : int, optional</span>
+<span class="sd">            Number of test samples to evaluate. Default is 360*24*3.</span>
+<span class="sd">        pathsite_ground_truth : str, optional</span>
+<span class="sd">            Path to the directory containing ground truth data. If None, defaults to self.pathsite/data.</span>
+<span class="sd">        site_ground_truth : str, optional</span>
+<span class="sd">            Site name for ground truth data. If None, defaults to self.site.</span>
+<span class="sd">        save_training_results : bool, optional</span>
+<span class="sd">            If True, computes and saves results for the training set as well.</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        result : dict</span>
+<span class="sd">            Dictionary containing computed statistics and results, including:</span>
+<span class="sd">                - &#39;lst_train&#39;, &#39;lst_test&#39;: Indices of training and test samples.</span>
+<span class="sd">                - &#39;Cout_train&#39;, &#39;Cout&#39;: True output concentrations for train/test.</span>
+<span class="sd">                - &#39;Chat_train&#39;, &#39;Chat&#39;: Predicted output concentrations for train/test.</span>
+<span class="sd">                - &#39;ywfhat_train&#39;, &#39;ywfhat&#39;: Predicted young water fractions for train/test.</span>
+<span class="sd">                - &#39;PQhat_train&#39;, &#39;global_PQhat&#39;: Predicted cumulative transit time distributions (TTDs).</span>
+<span class="sd">                - &#39;Q_test&#39;: Discharge values for test samples.</span>
+<span class="sd">                - &#39;w_winter&#39;, &#39;w_summer&#39;: Seasonal Weibull parameters (if applicable).</span>
+<span class="sd">                - &#39;alpha&#39;, &#39;alpha_train&#39;: Model-specific parameters (if applicable).</span>
+<span class="sd">                - &#39;global_PQtrue&#39;, &#39;quantile*_PQtrue&#39;: Ground truth cumulative TTDs (if available).</span>
+<span class="sd">                - &#39;ERROR_Cout&#39;, &#39;ERROR_Cout_train&#39;: Prediction errors for output concentrations.</span>
+<span class="sd">                - &#39;ERROR_ywf&#39;, &#39;ERROR_global_ywf&#39;: Errors for young water fraction predictions.</span>
+<span class="sd">                - &#39;ERROR_global_PQ&#39;, &#39;ERROR_quantilesQ_PQ&#39;: Errors for cumulative TTDs.</span>
+<span class="sd">                - &#39;SThat&#39;, &#39;ST_true&#39;: Predicted and true storage time distributions (if available).</span>
+<span class="sd">                - &#39;ERROR_ST&#39;: Errors for storage time distributions.</span>
+<span class="sd">                - Additional intermediate and diagnostic results.</span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        - This method loads the trained model from disk and evaluates it on the specified datasets.</span>
+<span class="sd">        - If ground truth TTD or storage data is unavailable, related results will be omitted.</span>
+<span class="sd">        - Results are saved as a pickle file in the &#39;save&#39; directory of the site path.</span>
+<span class="sd">        - Requires external dependencies: torch, numpy, pandas, pyreadr, pickle, and lightning_interface.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>    
+
+        <span class="k">if</span> <span class="n">pathsite_ground_truth</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">pathsite_ground_truth</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pathsite</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">)</span>
+            <span class="n">site_ground_truth</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">site</span>
+        <span class="n">Tmax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Tmax</span>
+        <span class="n">algo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">algo</span>
+        <span class="n">pathsite</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pathsite</span>
+        <span class="n">site</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">site</span>
+         
+
+        <span class="k">if</span> <span class="n">BATCH_SIZE</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">BATCH_SIZE</span> <span class="o">=</span> <span class="n">n_test</span><span class="o">-</span><span class="mi">5</span>
+
+        <span class="n">J</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">ET</span><span class="p">,</span> <span class="n">CJ</span><span class="p">,</span> <span class="n">Cout</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">pathsite</span><span class="p">,</span> <span class="n">site</span><span class="p">,</span> <span class="n">include_concentration</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="c1">################################################################### BEGIN TRAINING</span>
+        <span class="k">if</span> <span class="n">save_training_results</span><span class="p">:</span>
+            <span class="n">lst_train</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lst_train</span>
+            <span class="n">BATCH_SIZE_train</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst_train</span><span class="p">)</span>
+            <span class="n">result</span><span class="p">[</span><span class="s1">&#39;lst_train&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lst_train</span>
+    
+            <span class="n">data_train</span><span class="p">,</span> <span class="n">timeyear_train</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_features</span><span class="p">(</span><span class="n">pathsite</span><span class="p">,</span> <span class="n">site</span><span class="p">,</span> <span class="n">lst_train</span><span class="p">)</span>
+            <span class="n">input_size</span> <span class="o">=</span> <span class="n">data_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+            <span class="n">result</span><span class="p">[</span><span class="s1">&#39;timeyear_train&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">timeyear_train</span>
+            
+            <span class="k">if</span> <span class="n">algo</span><span class="o">==</span><span class="s1">&#39;WATRES&#39;</span><span class="p">:</span>
+                <span class="n">model</span> <span class="o">=</span> <span class="n">lightning_interface</span><span class="o">.</span><span class="n">LightningWatres</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mean_input_tracer</span><span class="p">,</span> <span class="n">Tmax</span><span class="o">=</span><span class="n">Tmax</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">algo</span><span class="o">==</span><span class="s1">&#39;AgeDomain&#39;</span><span class="p">:</span>
+                <span class="n">model</span> <span class="o">=</span> <span class="n">lightning_interface</span><span class="o">.</span><span class="n">LightningAgeDomain</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">Tmax</span><span class="o">=</span><span class="n">Tmax</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">algo</span><span class="o">==</span><span class="s1">&#39;Weibull&#39;</span><span class="p">:</span>
+                <span class="n">model</span> <span class="o">=</span> <span class="n">lightning_interface</span><span class="o">.</span><span class="n">LightningWeibull</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">Tmax</span><span class="o">=</span><span class="n">Tmax</span><span class="p">)</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path_model</span><span class="p">,</span> <span class="n">weights_only</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;state_dict&#39;</span><span class="p">])</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+        
+            <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>            
+                <span class="n">Cout_train</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst_train</span><span class="p">))</span>
+                <span class="n">CJ_train</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">lst_train</span><span class="p">),</span> <span class="n">Tmax</span><span class="p">))</span>
+                <span class="n">J_train</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">lst_train</span><span class="p">),</span> <span class="n">Tmax</span><span class="p">))</span>
+                <span class="n">Q_train</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst_train</span><span class="p">))</span>
+                <span class="n">ET_train</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst_train</span><span class="p">))</span>
+                <span class="n">Qinv_train</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">lst_train</span><span class="p">),</span><span class="n">Tmax</span><span class="p">))</span>
+                <span class="n">ETinv_train</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">lst_train</span><span class="p">),</span><span class="n">Tmax</span><span class="p">))</span>
+        
+                <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">t</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lst_train</span><span class="p">):</span>
+                    <span class="n">Cout_train</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Cout</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
+                    <span class="n">CJ_train</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">CJ</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="n">Tmax</span><span class="p">:</span><span class="n">t</span><span class="p">]</span>
+                    <span class="n">J_train</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">J</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="n">Tmax</span><span class="p">:</span><span class="n">t</span><span class="p">]</span>
+                    <span class="n">Q_train</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Q</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="n">Tmax</span><span class="p">:</span><span class="n">t</span><span class="p">])</span>
+                    <span class="n">ET_train</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ET</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="n">Tmax</span><span class="p">:</span><span class="n">t</span><span class="p">])</span>
+                    <span class="n">ETinv_train</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">ET</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="n">Tmax</span><span class="p">:</span><span class="n">t</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                    <span class="n">Qinv_train</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">Q</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="n">Tmax</span><span class="p">:</span><span class="n">t</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        
+                <span class="k">if</span> <span class="n">algo</span><span class="o">==</span><span class="s1">&#39;AgeDomain&#39;</span><span class="p">:</span>
+                    <span class="n">Chat</span><span class="p">,</span> <span class="n">ywfhat</span><span class="p">,</span> <span class="n">pQ</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">data_train</span><span class="p">,</span> <span class="n">J_train</span><span class="p">,</span> <span class="n">CJ_train</span><span class="p">,</span> <span class="n">returnpQ</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">algo</span> <span class="o">==</span> <span class="s1">&#39;Weibull&#39;</span><span class="p">:</span>
+                    <span class="n">Chat</span><span class="p">,</span> <span class="n">SThat</span><span class="p">,</span> <span class="n">ywfhat</span><span class="p">,</span> <span class="n">pQ</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">data_train</span><span class="p">,</span> <span class="n">J_train</span><span class="p">,</span> <span class="n">CJ_train</span><span class="p">,</span> <span class="n">returnpQ</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">algo</span> <span class="o">==</span> <span class="s1">&#39;WATRES&#39;</span><span class="p">:</span>
+                    <span class="n">Chat</span><span class="p">,</span> <span class="n">SThat</span><span class="p">,</span> <span class="n">ywfhat</span><span class="p">,</span> <span class="n">pQ</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">data_train</span><span class="p">,</span> <span class="n">J_train</span><span class="p">,</span> <span class="n">CJ_train</span><span class="p">,</span> <span class="n">return_alpha</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                    <span class="n">result</span><span class="p">[</span><span class="s1">&#39;alpha_train&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">alpha</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+
+
+                    
+        
+        
+                <span class="n">Chat</span><span class="p">,</span> <span class="n">ywfhat</span><span class="p">,</span> <span class="n">pQ</span> <span class="o">=</span> <span class="n">Chat</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">ywfhat</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">pQ</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+        
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;Cout_train&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Cout_train</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;Chat_train&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Chat</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;ywfhat_train&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ywfhat</span>        
+        
+                <span class="n">PQ_hat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">pQ</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;PQhat_train&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">PQ_hat</span>
+    
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;ERROR_Cout_train&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">Chat</span><span class="o">-</span><span class="n">Cout_train</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">lst_train</span><span class="p">)</span>
+        <span class="c1">################################################################### END TRAINING</span>
+
+        <span class="n">lst_test</span><span class="p">,</span> <span class="n">BATCH_SIZE</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_time_points</span><span class="p">(</span><span class="n">pathsite</span><span class="p">,</span> <span class="n">site</span><span class="p">,</span> <span class="n">BATCH_SIZE</span><span class="p">,</span> <span class="n">n_start</span><span class="o">=-</span><span class="n">n_test</span><span class="p">,</span> <span class="n">n_end</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">result</span><span class="p">[</span><span class="s1">&#39;lst_test&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lst_test</span>
+
+        <span class="n">data_test</span><span class="p">,</span> <span class="n">timeyear_test</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_features</span><span class="p">(</span><span class="n">pathsite</span><span class="p">,</span> <span class="n">site</span><span class="p">,</span> <span class="n">lst_test</span><span class="p">)</span>
+        <span class="n">input_size</span> <span class="o">=</span> <span class="n">data_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">result</span><span class="p">[</span><span class="s1">&#39;timeyear_test&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">timeyear_test</span>
+        
+
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start loading true TTDs&#39;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="kc">False</span><span class="p">:</span>
+                <span class="n">ls_ywf_true</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="n">ls_ttds_true</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>  
+                    <span class="n">ttd_temp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pathsite</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;TTD&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">site</span><span class="si">}</span><span class="s1">_TTD_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">.npy&#39;</span><span class="p">),</span>  <span class="n">allow_pickle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                    <span class="n">meanTTD</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">ttd_temp</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                    <span class="n">count</span> <span class="o">+=</span> <span class="n">ttd_temp</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="n">ls_ywf_true</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">ttd_true</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)[:,[</span><span class="mi">24</span><span class="o">*</span><span class="mi">30</span><span class="o">*</span><span class="n">j</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)]])</span>
+                    
+                    <span class="n">ywf_true</span> <span class="o">+=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">ttd_temp</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)[:,</span><span class="mi">24</span><span class="o">*</span><span class="mi">30</span><span class="o">*</span><span class="mi">3</span><span class="p">])</span>
+                    <span class="n">ls_ttds_true</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ttd_temp</span><span class="p">[:,:</span><span class="mi">7000</span><span class="p">])</span>
+                    <span class="k">del</span> <span class="n">ttd_temp</span>
+                <span class="n">ywf_true</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">ls_ywf_true</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">ttds_true</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">ls_ttds_true</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="c1"># keeping relevant ground truth values</span>
+                <span class="n">idxs2keep_true_ttd</span> <span class="o">=</span> <span class="n">lst_test</span> <span class="o">-</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">CJ</span><span class="p">)</span><span class="o">-</span><span class="n">ttd</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="n">ywf_true</span> <span class="o">=</span> <span class="n">ywf_true</span><span class="p">[</span><span class="n">idxs2keep_true_ttd</span><span class="p">]</span>
+                <span class="n">ttds_true</span> <span class="o">=</span> <span class="n">ttds_true</span><span class="p">[</span><span class="n">idxs2keep_true_ttd</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">rows_to_load</span> <span class="o">=</span> <span class="n">lst_test</span> <span class="o">-</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">CJ</span><span class="p">)</span><span class="o">-</span><span class="mi">365</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+                <span class="n">npy_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pathsite_ground_truth</span><span class="p">,</span> <span class="s1">&#39;TTD.npy&#39;</span><span class="p">)</span>
+                <span class="n">ttds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">npy_file</span><span class="p">)</span>
+                <span class="c1"># keeping relevant ground truth values</span>
+                <span class="n">idxs2keep_true_ttd</span> <span class="o">=</span> <span class="n">lst_test</span> <span class="o">-</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">CJ</span><span class="p">)</span><span class="o">-</span><span class="n">ttds</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="n">ttds_true</span> <span class="o">=</span> <span class="n">ttds</span><span class="p">[</span><span class="n">idxs2keep_true_ttd</span><span class="p">,:]</span>
+                <span class="n">ywf_true</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">ttds_true</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)[:,[</span><span class="mi">24</span><span class="o">*</span><span class="mi">30</span><span class="o">*</span><span class="n">j</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)]]</span>
+            <span class="n">true_ttd_loaded</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;True TTDs loaded&#39;</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;WARNING: True TTDs not loaded&#39;</span><span class="p">)</span>
+            <span class="n">true_ttd_loaded</span> <span class="o">=</span> <span class="kc">False</span>
+        
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">rSTO</span> <span class="o">=</span> <span class="n">pyreadr</span><span class="o">.</span><span class="n">read_r</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pathsite_ground_truth</span><span class="p">,</span> <span class="n">site_ground_truth</span><span class="o">+</span><span class="s1">&#39;_rank_storage.rda&#39;</span><span class="p">))</span>
+            <span class="n">rSTO</span> <span class="o">=</span> <span class="n">rSTO</span><span class="p">[</span><span class="s2">&quot;rank_storage&quot;</span><span class="p">]</span>
+            <span class="n">rSTO</span> <span class="o">=</span> <span class="n">rSTO</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+    
+            <span class="n">idxs2keep_true_rSTO</span> <span class="o">=</span> <span class="n">lst_test</span> <span class="o">-</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">CJ</span><span class="p">)</span><span class="o">-</span><span class="n">rSTO</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">rSTO_true</span> <span class="o">=</span> <span class="n">rSTO</span><span class="p">[</span><span class="n">idxs2keep_true_rSTO</span><span class="p">,:]</span>
+            <span class="n">rSTO_loaded</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">rSTO_loaded</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">pass</span>
+        
+        
+        <span class="k">if</span> <span class="n">algo</span><span class="o">==</span><span class="s1">&#39;AgeDomain&#39;</span><span class="p">:</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="n">lightning_interface</span><span class="o">.</span><span class="n">LightningAgeDomain</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">Tmax</span><span class="o">=</span><span class="n">Tmax</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">algo</span><span class="o">==</span><span class="s1">&#39;Weibull&#39;</span><span class="p">:</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="n">lightning_interface</span><span class="o">.</span><span class="n">LightningWeibull</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">Tmax</span><span class="o">=</span><span class="n">Tmax</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">algo</span><span class="o">==</span><span class="s1">&#39;WATRES&#39;</span><span class="p">:</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="n">lightning_interface</span><span class="o">.</span><span class="n">LightningWatres</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mean_input_tracer</span><span class="p">,</span> <span class="n">Tmax</span><span class="o">=</span><span class="n">Tmax</span><span class="p">)</span>
+            
+        <span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path_model</span><span class="p">,</span> <span class="n">weights_only</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;state_dict&#39;</span><span class="p">])</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+    
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>            
+            <span class="n">Cout_test</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst_test</span><span class="p">))</span>
+            <span class="n">CJ_test</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">lst_test</span><span class="p">),</span> <span class="n">Tmax</span><span class="p">))</span>
+            <span class="n">J_test</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">lst_test</span><span class="p">),</span> <span class="n">Tmax</span><span class="p">))</span>
+            <span class="n">Q_test</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst_test</span><span class="p">))</span>
+            <span class="n">ET_test</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst_test</span><span class="p">))</span>
+            <span class="n">Qinv_test</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">lst_test</span><span class="p">),</span><span class="n">Tmax</span><span class="p">))</span>
+            <span class="n">ETinv_test</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">lst_test</span><span class="p">),</span><span class="n">Tmax</span><span class="p">))</span>
+    
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">t</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lst_test</span><span class="p">):</span>
+                <span class="n">Cout_test</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Cout</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
+                <span class="n">CJ_test</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">CJ</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="n">Tmax</span><span class="p">:</span><span class="n">t</span><span class="p">]</span>
+                <span class="n">J_test</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">J</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="n">Tmax</span><span class="p">:</span><span class="n">t</span><span class="p">]</span>
+                <span class="n">Q_test</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Q</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="n">Tmax</span><span class="p">:</span><span class="n">t</span><span class="p">])</span>
+                <span class="n">ET_test</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ET</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="n">Tmax</span><span class="p">:</span><span class="n">t</span><span class="p">])</span>
+                <span class="n">ETinv_test</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">ET</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="n">Tmax</span><span class="p">:</span><span class="n">t</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="n">Qinv_test</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">Q</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="n">Tmax</span><span class="p">:</span><span class="n">t</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    
+            <span class="k">if</span> <span class="n">algo</span><span class="o">==</span><span class="s1">&#39;AgeDomain&#39;</span><span class="p">:</span>
+                <span class="n">Chat</span><span class="p">,</span> <span class="n">ywfhat</span><span class="p">,</span> <span class="n">pQ</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">data_test</span><span class="p">,</span> <span class="n">J_test</span><span class="p">,</span> <span class="n">CJ_test</span><span class="p">,</span> <span class="n">returnpQ</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">algo</span> <span class="o">==</span> <span class="s1">&#39;Weibull&#39;</span><span class="p">:</span>
+                <span class="n">Chat</span><span class="p">,</span> <span class="n">SThat</span><span class="p">,</span> <span class="n">ywfhat</span><span class="p">,</span> <span class="n">pQ</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">data_test</span><span class="p">,</span> <span class="n">J_test</span><span class="p">,</span> <span class="n">CJ_test</span><span class="p">,</span> <span class="n">returnpQ</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="n">w</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">forward_w</span><span class="p">(</span><span class="n">data_test</span><span class="p">)</span>
+                <span class="n">w</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+                <span class="n">frac_year</span> <span class="o">=</span> <span class="n">timeyear_test</span>
+                <span class="n">frac_year</span> <span class="o">=</span> <span class="p">[</span><span class="n">el</span><span class="o">-</span><span class="nb">int</span><span class="p">(</span><span class="n">el</span><span class="p">)</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">frac_year</span><span class="p">]</span>
+                <span class="n">frac_year</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">min</span><span class="p">([</span><span class="mi">1</span><span class="o">-</span><span class="n">el</span><span class="p">,</span> <span class="n">el</span><span class="p">])</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">frac_year</span><span class="p">])</span>
+                <span class="n">winter_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">frac_year</span><span class="o">&lt;=</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">30</span><span class="o">/</span><span class="mi">365</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">summer_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="mf">0.5</span><span class="o">-</span><span class="n">frac_year</span><span class="p">)</span><span class="o">&lt;=</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">30</span><span class="o">/</span><span class="mi">365</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;w_winter&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="n">winter_idxs</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),:],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;w_summer&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="n">summer_idxs</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),:],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">algo</span> <span class="o">==</span> <span class="s1">&#39;WATRES&#39;</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;BEFORE&#39;</span><span class="p">)</span>
+                <span class="n">Chat</span><span class="p">,</span> <span class="n">SThat</span><span class="p">,</span> <span class="n">ywfhat</span><span class="p">,</span> <span class="n">pQ</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">data_test</span><span class="p">,</span> <span class="n">J_test</span><span class="p">,</span> <span class="n">CJ_test</span><span class="p">,</span> <span class="n">return_alpha</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;AFTER&#39;</span><span class="p">)</span>
+
+                <span class="n">w</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">forward_w</span><span class="p">(</span><span class="n">data_test</span><span class="p">)</span>
+                <span class="n">w</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+                <span class="n">frac_year</span> <span class="o">=</span> <span class="n">timeyear_test</span>
+                <span class="n">frac_year</span> <span class="o">=</span> <span class="p">[</span><span class="n">el</span><span class="o">-</span><span class="nb">int</span><span class="p">(</span><span class="n">el</span><span class="p">)</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">frac_year</span><span class="p">]</span>
+                <span class="n">frac_year</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">min</span><span class="p">([</span><span class="mi">1</span><span class="o">-</span><span class="n">el</span><span class="p">,</span> <span class="n">el</span><span class="p">])</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">frac_year</span><span class="p">])</span>
+                <span class="n">winter_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">frac_year</span><span class="o">&lt;=</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">30</span><span class="o">/</span><span class="mi">365</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">summer_idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="mf">0.5</span><span class="o">-</span><span class="n">frac_year</span><span class="p">)</span><span class="o">&lt;=</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">30</span><span class="o">/</span><span class="mi">365</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;w_winter&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="n">winter_idxs</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),:],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;w_summer&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="n">summer_idxs</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),:],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;alpha&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">alpha</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+
+
+            <span class="c1">####### </span>
+            <span class="n">Q_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">Q</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">lst_test</span><span class="p">])</span>            
+            <span class="n">result</span><span class="p">[</span><span class="s1">&#39;Q_test&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Q_test</span>
+    
+            <span class="n">Chat</span><span class="p">,</span> <span class="n">ywfhat</span><span class="p">,</span> <span class="n">pQ</span> <span class="o">=</span> <span class="n">Chat</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">ywfhat</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">pQ</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+    
+            <span class="n">result</span><span class="p">[</span><span class="s1">&#39;Cout&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Cout_test</span>
+            <span class="n">result</span><span class="p">[</span><span class="s1">&#39;Chat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Chat</span>
+            <span class="n">result</span><span class="p">[</span><span class="s1">&#39;ywfhat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ywfhat</span>
+    
+            <span class="n">PQ_hat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">pQ</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+            <span class="n">result</span><span class="p">[</span><span class="s1">&#39;global_PQhat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">PQ_hat</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            
+            <span class="n">data_Q</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;q&#39;</span><span class="p">:</span> <span class="n">Q</span><span class="p">})</span>
+            <span class="n">q_quantiles</span> <span class="o">=</span> <span class="n">data_Q</span><span class="p">[</span><span class="s1">&#39;q&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">])</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+            <span class="c1"># Add columns for each quartile with 0 or 1 depending on which quartile the &#39;q&#39; value belongs to</span>
+            <span class="n">data_Q</span><span class="p">[</span><span class="s1">&#39;Q_quantile_0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">data_Q</span><span class="p">[</span><span class="s1">&#39;q&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">q_quantiles</span><span class="p">[</span><span class="mf">0.25</span><span class="p">])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+            <span class="n">data_Q</span><span class="p">[</span><span class="s1">&#39;Q_quantile_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">data_Q</span><span class="p">[</span><span class="s1">&#39;q&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">q_quantiles</span><span class="p">[</span><span class="mf">0.25</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data_Q</span><span class="p">[</span><span class="s1">&#39;q&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">q_quantiles</span><span class="p">[</span><span class="mf">0.5</span><span class="p">]))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+            <span class="n">data_Q</span><span class="p">[</span><span class="s1">&#39;Q_quantile_2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">data_Q</span><span class="p">[</span><span class="s1">&#39;q&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">q_quantiles</span><span class="p">[</span><span class="mf">0.5</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data_Q</span><span class="p">[</span><span class="s1">&#39;q&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">q_quantiles</span><span class="p">[</span><span class="mf">0.75</span><span class="p">]))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+            <span class="n">data_Q</span><span class="p">[</span><span class="s1">&#39;Q_quantile_3&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">data_Q</span><span class="p">[</span><span class="s1">&#39;q&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">q_quantiles</span><span class="p">[</span><span class="mf">0.75</span><span class="p">])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+                <span class="n">idxs_q_quantiles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">data_Q</span><span class="p">[</span><span class="s1">&#39;Q_quantile_</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">)])[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">idxs_q_quantiles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">intersect1d</span><span class="p">(</span><span class="n">idxs_q_quantiles</span><span class="p">,</span> <span class="n">lst_test</span><span class="p">)</span>
+                <span class="n">idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lst_test</span><span class="p">)</span> <span class="k">if</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">idxs_q_quantiles</span><span class="p">])</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;quantile</span><span class="si">{0}</span><span class="s1">_PQhat&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">PQ_hat</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="n">idxs</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),:],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                
+
+            <span class="k">if</span> <span class="n">true_ttd_loaded</span><span class="p">:</span>
+                <span class="c1">#result[&#39;PQtrue&#39;] = np.cumsum(ttds_true, axis=1)</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;global_PQtrue&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">ttds_true</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+                    <span class="n">idxs_q_quantiles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">data_Q</span><span class="p">[</span><span class="s1">&#39;Q_quantile_</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">)])[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="n">idxs_q_quantiles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">intersect1d</span><span class="p">(</span><span class="n">idxs_q_quantiles</span><span class="p">,</span> <span class="n">lst_test</span><span class="p">)</span>
+                    <span class="n">idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lst_test</span><span class="p">)</span> <span class="k">if</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">idxs_q_quantiles</span><span class="p">])</span>
+                    <span class="n">result</span><span class="p">[</span><span class="s1">&#39;quantile</span><span class="si">{0}</span><span class="s1">_PQtrue&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">ttds_true</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="n">idxs</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),:],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;ywf_true&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ywf_true</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;ERROR_ywf&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">ywfhat</span><span class="o">-</span><span class="n">ywf_true</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">lst_test</span><span class="p">)</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;ERROR_global_ywf&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">ywfhat</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">ywf_true</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;ERROR_global_PQ&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">global_average</span><span class="p">(</span><span class="n">PQ_hat</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">ttds_true</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;ERROR_quantilesQ_PQ&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">average_by_Qquantiles</span><span class="p">(</span><span class="n">PQ_hat</span><span class="p">,</span> <span class="n">lst_test</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">ttds_true</span><span class="p">)</span>
+            
+            <span class="n">result</span><span class="p">[</span><span class="s1">&#39;ERROR_Cout&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">Chat</span><span class="o">-</span><span class="n">Cout_test</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">lst_test</span><span class="p">)</span>
+    
+    
+    
+            <span class="k">if</span> <span class="p">(</span><span class="n">algo</span><span class="o">!=</span><span class="s1">&#39;AgeDomain&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">rSTO_loaded</span><span class="p">):</span>
+                <span class="n">SThat</span> <span class="o">=</span> <span class="n">SThat</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;SThat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">SThat</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;ST_true&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rSTO_true</span>
+                <span class="n">max_age</span> <span class="o">=</span> <span class="nb">min</span><span class="p">([</span><span class="n">SThat</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">rSTO_true</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;ERROR_ST&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">SThat</span><span class="p">[:,:</span><span class="n">max_age</span><span class="p">]</span><span class="o">-</span><span class="n">rSTO_true</span><span class="p">[:,:</span><span class="n">max_age</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">lst_test</span><span class="p">)</span>
+    
+
+
+            <span class="n">start_index</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path_model</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;save_&quot;</span><span class="p">)</span>
+            <span class="n">name_model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">path_model</span><span class="p">[</span><span class="n">start_index</span><span class="o">+</span><span class="mi">5</span><span class="p">:</span><span class="o">-</span><span class="mi">8</span><span class="p">]</span> <span class="c1"># -8 to remove &#39;.pth.tar&#39; 5 to remove save_</span>
+
+            
+            <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pathsite</span><span class="p">,</span> <span class="s1">&#39;save&#39;</span><span class="p">,</span> <span class="s2">&quot;results_</span><span class="si">{0}</span><span class="s2">.pkl&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name_model</span><span class="p">)),</span><span class="s2">&quot;wb&quot;</span><span class="p">)</span>
+            <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">result</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Q.Duchemin and P.Benettin.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

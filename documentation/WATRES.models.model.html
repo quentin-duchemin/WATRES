@@ -1,0 +1,842 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>WATRES.models.model package &#8212; WATRES</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/override.css?v=dd5beb26" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/sphinx_gallery.css?v=370a08b5" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom_logo.css?v=f521e7f3" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=29a6c3e3"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'documentation/WATRES.models.model';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tutorials" href="../tutorials/index.html" />
+    <link rel="prev" title="WATRES.models package" href="WATRES.models.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">WATRES</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../presentation.html">
+    Presentation of the project
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="WATRES.html">
+    WATRES package
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../developer/index.html">
+    Developer
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../references.html">
+    References
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../team.html">
+    Team
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../presentation.html">
+    Presentation of the project
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="WATRES.html">
+    WATRES package
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../developer/index.html">
+    Developer
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../references.html">
+    References
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../team.html">
+    Team
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="WATRES.models.html">WATRES.models package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">WATRES.models.model package</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="WATRES.html" class="nav-link">WATRES package</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="WATRES.models.html" class="nav-link">WATRES.models package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">WATRES.model...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="watres-models-model-package">
+<h1>WATRES.models.model package<a class="headerlink" href="#watres-models-model-package" title="Link to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-WATRES.models.model.basisw">
+<span id="watres-models-model-basisw-module"></span><h2>WATRES.models.model.basisw module<a class="headerlink" href="#module-WATRES.models.model.basisw" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="WATRES.models.model.basisw.BasisW">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">WATRES.models.model.basisw.</span></span><span class="sig-name descname"><span class="pre">BasisW</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nsplines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Tmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">40000</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/basisw.html#BasisW"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.basisw.BasisW" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="WATRES.models.model.basisw.BasisW.init_mat_basisw">
+<span class="sig-name descname"><span class="pre">init_mat_basisw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/basisw.html#BasisW.init_mat_basisw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.basisw.BasisW.init_mat_basisw" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WATRES.models.model.basisw.BasisW.init_mat_basisw_dT">
+<span class="sig-name descname"><span class="pre">init_mat_basisw_dT</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/basisw.html#BasisW.init_mat_basisw_dT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.basisw.BasisW.init_mat_basisw_dT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-WATRES.models.model.utils">
+<span id="watres-models-model-utils-module"></span><h2>WATRES.models.model.utils module<a class="headerlink" href="#module-WATRES.models.model.utils" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.models.model.utils.random_shuffle">
+<span class="sig-prename descclassname"><span class="pre">WATRES.models.model.utils.</span></span><span class="sig-name descname"><span class="pre">random_shuffle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/utils.html#random_shuffle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.utils.random_shuffle" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.models.model.utils.ifnone">
+<span class="sig-prename descclassname"><span class="pre">WATRES.models.model.utils.</span></span><span class="sig-name descname"><span class="pre">ifnone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/utils.html#ifnone"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.utils.ifnone" title="Link to this definition">#</a></dt>
+<dd><p><cite>b</cite> if <cite>a</cite> is None else <cite>a</cite></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.models.model.utils.transfer_weights">
+<span class="sig-prename descclassname"><span class="pre">WATRES.models.model.utils.</span></span><span class="sig-name descname"><span class="pre">transfer_weights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_head</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/utils.html#transfer_weights"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.utils.transfer_weights" title="Link to this definition">#</a></dt>
+<dd><p>Utility function that allows to easily transfer weights between models.
+Taken from the great self-supervised repository created by Kerem Turgutlu.
+<a class="github reference external" href="https://github.com/KeremTurgutlu/self_supervised/blob/d87ebd9b4961c7da0efd6073c42782bbc61aaa2e/self_supervised/utils.py">KeremTurgutlu/self_supervised</a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.models.model.utils.rotate_axis0">
+<span class="sig-prename descclassname"><span class="pre">WATRES.models.model.utils.</span></span><span class="sig-name descname"><span class="pre">rotate_axis0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/utils.html#rotate_axis0"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.utils.rotate_axis0" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-WATRES.models.model.w_WATRES">
+<span id="watres-models-model-w-watres-module"></span><h2>WATRES.models.model.w_WATRES module<a class="headerlink" href="#module-WATRES.models.model.w_WATRES" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="WATRES.models.model.w_WATRES.BasisW">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">WATRES.models.model.w_WATRES.</span></span><span class="sig-name descname"><span class="pre">BasisW</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Tmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3000</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/w_WATRES.html#BasisW"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.w_WATRES.BasisW" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="WATRES.models.model.w_WATRES.BasisW.init_mat_basisw">
+<span class="sig-name descname"><span class="pre">init_mat_basisw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/w_WATRES.html#BasisW.init_mat_basisw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.w_WATRES.BasisW.init_mat_basisw" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.models.model.w_WATRES.gamma_pdf">
+<span class="sig-prename descclassname"><span class="pre">WATRES.models.model.w_WATRES.</span></span><span class="sig-name descname"><span class="pre">gamma_pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/w_WATRES.html#gamma_pdf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.w_WATRES.gamma_pdf" title="Link to this definition">#</a></dt>
+<dd><p>Compute the Gamma PDF manually.
+:type x: 
+:param x: Input tensor (must be positive)
+:type a: 
+:param a: Shape parameter (concentration)
+:type b: 
+:param b: Rate parameter (inverse scale)
+:return: Gamma PDF</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="WATRES.models.model.w_WATRES.Watres">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">WATRES.models.model.w_WATRES.</span></span><span class="sig-name descname"><span class="pre">Watres</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mean_input_tracer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dmodel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Tmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">43800</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">KpQ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/w_WATRES.html#Watres"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.w_WATRES.Watres" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module" title="(in PyTorch v2.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="WATRES.models.model.w_WATRES.Watres.forward_w">
+<span class="sig-name descname"><span class="pre">forward_w</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/w_WATRES.html#Watres.forward_w"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.w_WATRES.Watres.forward_w" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WATRES.models.model.w_WATRES.Watres.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">J</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CJ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">returnpQ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">EHS</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idxsEHS</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/w_WATRES.html#Watres.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.w_WATRES.Watres.forward" title="Link to this definition">#</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-WATRES.models.model.w_WATRES_old">
+<span id="watres-models-model-w-watres-old-module"></span><h2>WATRES.models.model.w_WATRES_old module<a class="headerlink" href="#module-WATRES.models.model.w_WATRES_old" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="WATRES.models.model.w_WATRES_old.BasisW">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">WATRES.models.model.w_WATRES_old.</span></span><span class="sig-name descname"><span class="pre">BasisW</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nsplines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Tmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3000</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/w_WATRES_old.html#BasisW"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.w_WATRES_old.BasisW" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="WATRES.models.model.w_WATRES_old.BasisW.create_non_linear_mesh">
+<span class="sig-name descname"><span class="pre">create_non_linear_mesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nsplines</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/w_WATRES_old.html#BasisW.create_non_linear_mesh"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.w_WATRES_old.BasisW.create_non_linear_mesh" title="Link to this definition">#</a></dt>
+<dd><p>Create a non-linear mesh that is dense near 0 and sparser near Tmax.
+We will reverse the exponential scaling for the mesh to achieve this.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WATRES.models.model.w_WATRES_old.BasisW.init_mat_basisw">
+<span class="sig-name descname"><span class="pre">init_mat_basisw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/w_WATRES_old.html#BasisW.init_mat_basisw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.w_WATRES_old.BasisW.init_mat_basisw" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.models.model.w_WATRES_old.gamma_pdf">
+<span class="sig-prename descclassname"><span class="pre">WATRES.models.model.w_WATRES_old.</span></span><span class="sig-name descname"><span class="pre">gamma_pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/w_WATRES_old.html#gamma_pdf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.w_WATRES_old.gamma_pdf" title="Link to this definition">#</a></dt>
+<dd><p>Compute the Gamma PDF manually.
+:type x: 
+:param x: Input tensor (must be positive)
+:type a: 
+:param a: Shape parameter (concentration)
+:type b: 
+:param b: Rate parameter (inverse scale)
+:return: Gamma PDF</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="WATRES.models.model.w_WATRES_old.Watres">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">WATRES.models.model.w_WATRES_old.</span></span><span class="sig-name descname"><span class="pre">Watres</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dmodel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Tmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">43800</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">KpQ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/w_WATRES_old.html#Watres"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.w_WATRES_old.Watres" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module" title="(in PyTorch v2.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="WATRES.models.model.w_WATRES_old.Watres.forward_w">
+<span class="sig-name descname"><span class="pre">forward_w</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/w_WATRES_old.html#Watres.forward_w"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.w_WATRES_old.Watres.forward_w" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WATRES.models.model.w_WATRES_old.Watres.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">J</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CJ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">returnpQ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">EHS</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idxsEHS</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/w_WATRES_old.html#Watres.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.w_WATRES_old.Watres.forward" title="Link to this definition">#</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-WATRES.models.model.w_age_domain">
+<span id="watres-models-model-w-age-domain-module"></span><h2>WATRES.models.model.w_age_domain module<a class="headerlink" href="#module-WATRES.models.model.w_age_domain" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.models.model.w_age_domain.mixture_component">
+<span class="sig-prename descclassname"><span class="pre">WATRES.models.model.w_age_domain.</span></span><span class="sig-name descname"><span class="pre">mixture_component</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">80000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/w_age_domain.html#mixture_component"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.w_age_domain.mixture_component" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.models.model.w_age_domain.compute_convs">
+<span class="sig-prename descclassname"><span class="pre">WATRES.models.model.w_age_domain.</span></span><span class="sig-name descname"><span class="pre">compute_convs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_distri</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">J</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CJ</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/w_age_domain.html#compute_convs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.w_age_domain.compute_convs" title="Link to this definition">#</a></dt>
+<dd><p>Compute convolutions</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WATRES.models.model.w_age_domain.get_distris">
+<span class="sig-prename descclassname"><span class="pre">WATRES.models.model.w_age_domain.</span></span><span class="sig-name descname"><span class="pre">get_distris</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/w_age_domain.html#get_distris"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.w_age_domain.get_distris" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="WATRES.models.model.w_age_domain.AgeDomain">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">WATRES.models.model.w_age_domain.</span></span><span class="sig-name descname"><span class="pre">AgeDomain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Tmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">43800</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/w_age_domain.html#AgeDomain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.w_age_domain.AgeDomain" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module" title="(in PyTorch v2.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="WATRES.models.model.w_age_domain.AgeDomain.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">J</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CJ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">returnpQ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">EHS</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idxsEHS</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/w_age_domain.html#AgeDomain.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.w_age_domain.AgeDomain.forward" title="Link to this definition">#</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="watres-models-model-w-sum-squares-nobert2-bayesian3-module">
+<h2>WATRES.models.model.w_sum_squares_noBERT2_bayesian3 module<a class="headerlink" href="#watres-models-model-w-sum-squares-nobert2-bayesian3-module" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-WATRES.models.model.w_weibull">
+<span id="watres-models-model-w-weibull-module"></span><h2>WATRES.models.model.w_weibull module<a class="headerlink" href="#module-WATRES.models.model.w_weibull" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="WATRES.models.model.w_weibull.Weibull">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">WATRES.models.model.w_weibull.</span></span><span class="sig-name descname"><span class="pre">Weibull</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Tmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">43800</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">KpQ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">power</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/w_weibull.html#Weibull"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.w_weibull.Weibull" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module" title="(in PyTorch v2.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="WATRES.models.model.w_weibull.Weibull.forward_w">
+<span class="sig-name descname"><span class="pre">forward_w</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/w_weibull.html#Weibull.forward_w"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.w_weibull.Weibull.forward_w" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WATRES.models.model.w_weibull.Weibull.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">J</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CJ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">returnpQ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">EHS</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idxsEHS</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/WATRES/models/model/w_weibull.html#Weibull.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WATRES.models.model.w_weibull.Weibull.forward" title="Link to this definition">#</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-WATRES.models.model">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-WATRES.models.model" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="WATRES.models.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">WATRES.models package</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../tutorials/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tutorials</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-WATRES.models.model.basisw">WATRES.models.model.basisw module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.basisw.BasisW"><code class="docutils literal notranslate"><span class="pre">BasisW</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.basisw.BasisW.init_mat_basisw"><code class="docutils literal notranslate"><span class="pre">BasisW.init_mat_basisw()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.basisw.BasisW.init_mat_basisw_dT"><code class="docutils literal notranslate"><span class="pre">BasisW.init_mat_basisw_dT()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-WATRES.models.model.utils">WATRES.models.model.utils module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.utils.random_shuffle"><code class="docutils literal notranslate"><span class="pre">random_shuffle()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.utils.ifnone"><code class="docutils literal notranslate"><span class="pre">ifnone()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.utils.transfer_weights"><code class="docutils literal notranslate"><span class="pre">transfer_weights()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.utils.rotate_axis0"><code class="docutils literal notranslate"><span class="pre">rotate_axis0()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-WATRES.models.model.w_WATRES">WATRES.models.model.w_WATRES module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.w_WATRES.BasisW"><code class="docutils literal notranslate"><span class="pre">BasisW</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.w_WATRES.BasisW.init_mat_basisw"><code class="docutils literal notranslate"><span class="pre">BasisW.init_mat_basisw()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.w_WATRES.gamma_pdf"><code class="docutils literal notranslate"><span class="pre">gamma_pdf()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.w_WATRES.Watres"><code class="docutils literal notranslate"><span class="pre">Watres</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.w_WATRES.Watres.forward_w"><code class="docutils literal notranslate"><span class="pre">Watres.forward_w()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.w_WATRES.Watres.forward"><code class="docutils literal notranslate"><span class="pre">Watres.forward()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-WATRES.models.model.w_WATRES_old">WATRES.models.model.w_WATRES_old module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.w_WATRES_old.BasisW"><code class="docutils literal notranslate"><span class="pre">BasisW</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.w_WATRES_old.BasisW.create_non_linear_mesh"><code class="docutils literal notranslate"><span class="pre">BasisW.create_non_linear_mesh()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.w_WATRES_old.BasisW.init_mat_basisw"><code class="docutils literal notranslate"><span class="pre">BasisW.init_mat_basisw()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.w_WATRES_old.gamma_pdf"><code class="docutils literal notranslate"><span class="pre">gamma_pdf()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.w_WATRES_old.Watres"><code class="docutils literal notranslate"><span class="pre">Watres</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.w_WATRES_old.Watres.forward_w"><code class="docutils literal notranslate"><span class="pre">Watres.forward_w()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.w_WATRES_old.Watres.forward"><code class="docutils literal notranslate"><span class="pre">Watres.forward()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-WATRES.models.model.w_age_domain">WATRES.models.model.w_age_domain module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.w_age_domain.mixture_component"><code class="docutils literal notranslate"><span class="pre">mixture_component()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.w_age_domain.compute_convs"><code class="docutils literal notranslate"><span class="pre">compute_convs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.w_age_domain.get_distris"><code class="docutils literal notranslate"><span class="pre">get_distris()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.w_age_domain.AgeDomain"><code class="docutils literal notranslate"><span class="pre">AgeDomain</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.w_age_domain.AgeDomain.forward"><code class="docutils literal notranslate"><span class="pre">AgeDomain.forward()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#watres-models-model-w-sum-squares-nobert2-bayesian3-module">WATRES.models.model.w_sum_squares_noBERT2_bayesian3 module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-WATRES.models.model.w_weibull">WATRES.models.model.w_weibull module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.w_weibull.Weibull"><code class="docutils literal notranslate"><span class="pre">Weibull</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.w_weibull.Weibull.forward_w"><code class="docutils literal notranslate"><span class="pre">Weibull.forward_w()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#WATRES.models.model.w_weibull.Weibull.forward"><code class="docutils literal notranslate"><span class="pre">Weibull.forward()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-WATRES.models.model">Module contents</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/documentation/WATRES.models.model.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Q.Duchemin and P.Benettin.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
