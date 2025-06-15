@@ -5,6 +5,10 @@ import random
 from datetime import datetime, timedelta
 
 def fractional_year_to_datetime(fractional_year):
+    """
+    Converts a fractional year (e.g., 2023.5) to a datetime object rounded to the nearest hour.
+    The fractional part is interpreted as the fraction of the year that has elapsed.
+    """
     # Extract the integer part (year) and the fractional part
     year = int(fractional_year)
     fractional_part = fractional_year - year
@@ -29,13 +33,18 @@ def fractional_year_to_datetime(fractional_year):
     return rounded_date_time
 
 def datetime2year_month(dt):
+    """
+    Converts a datetime object to a string in the format 'YYYY-M'.
+    """
     a = str(dt.year)
     a = a+'-'+str(dt.month)
     return(a)
 
-
-
 def get_clusters_time_points(pathdata, lst, nbclusts=4, use_cout=False):
+    """
+    Clusters time points in 'lst' into 'nbclusts' clusters based on quantiles of Q or Cout values.
+    Loads data from pathdata, and returns a list of clusters (each cluster is a list of indices).
+    """
     import pickle
     f = open(pathdata+"data.pkl","rb")
     data = pickle.load(f)
@@ -60,8 +69,11 @@ def get_clusters_time_points(pathdata, lst, nbclusts=4, use_cout=False):
          clusters[find_level(Q[t])].append(i)    
     return clusters
 
-
 def get_clusters_time_points_subsequence(pathdata, lst, nbclusts=4, use_cout=False):
+    """
+    Clusters time points in 'lst' into 'nbclusts' clusters by sorting Q or Cout values and splitting into equal-sized groups.
+    Returns a list of clusters (each cluster is a numpy array of indices).
+    """
     import pickle
     f = open(pathdata+"data.pkl","rb")
     data = pickle.load(f)
@@ -78,20 +90,11 @@ def get_clusters_time_points_subsequence(pathdata, lst, nbclusts=4, use_cout=Fal
          clusters.append(timesorted[int(n*l/nbclusts):int(n*(l+1)/nbclusts)])    
     return clusters
 
-
-
-
-
-
-
-import numpy, scipy.optimize
-
-from scipy.optimize import curve_fit
-
-
-
 def fit_sin(tt, yy):
-    '''Fit sin to the input time sequence, and return fitting parameters "amp", "omega", "phase", "offset", "freq", "period" and "fitfunc"'''
+    """
+    Fits a sinusoidal function to the input time sequence (tt, yy).
+    Returns a dictionary with amplitude, phase, offset, fit function, max covariance, and raw results.
+    """
     tt = numpy.array(tt)
     yy = numpy.array(yy)
     ff = numpy.fft.fftfreq(len(tt), (tt[1]-tt[0]))   # assume uniform spacing
@@ -108,10 +111,12 @@ def fit_sin(tt, yy):
     fitfunc = lambda t: A * numpy.sin(2*np.pi*t/(24*365) + p) + c
     return {"amp": A, "phase": p, "offset": c, "fitfunc": fitfunc, "maxcov": numpy.max(pcov), "rawres": (guess,popt,pcov)}
 
-
-
 def get_ampli(name_data, data, figure=True, use_noiseless_CJ=False):
-
+    """
+    Computes the amplitude of a sinusoidal fit to the data[name_data] time series.
+    Optionally plots the data and fit. If use_noiseless_CJ is True, uses fixed coefficients for the fit.
+    Returns the absolute value of the amplitude.
+    """
     import pylab as plt
 
     N, amp, omega, phase, offset, noise = 500, 10., 2., .5, 4., 3

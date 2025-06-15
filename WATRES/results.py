@@ -45,23 +45,39 @@ def average_by_Qquantiles(PQ_hat, lst, Q, ttd):
 
 class Results():
     """
-    Result class of the WATRES package to learn transit time distributions of a given watershed.
+    Result class of the WATRES package to predict transit time distributions of a given watershed.
     """
     def __init__(self):
         pass
         
     def model_estimate(self, filter_dates=None, BATCH_SIZE=None):
         """
-        Forward method of the model. Return the estimated cumulative TTDs and the predicted output tracer time series.
-        
-        Parameters
-        ----------
-        filter_dates: function
-            Function taking as input an array of fractional year (such as [2020.43, 2020.47, ...] and returns the set of indexes that should to keep. A basic example to keep only time points after 2020 is:
-            def filter_dates(dates):
-                return np.where(dates>=2020)[0]
-        BATCH_SIZE: int
-            Among the time points filtered by `filter_dates`, BATCH_SIZE specifies the size of the set used to evaluate the model. If BATCH_SIZE = None, all the prefiltered time points will be considered.
+        Estimates the cumulative TTDs (Transit Time Distributions) and predicts the output tracer time series using the trained model.
+        filter_dates : callable, optional
+            A function that takes an array of fractional years (e.g., [2020.43, 2020.47, ...]) and returns the indices of the time points to keep.
+            Example:
+                    return np.where(dates >= 2020)[0]
+            If None, all available time points are used.
+        BATCH_SIZE : int, optional
+            Number of time points (after filtering) to use for model evaluation. If None, all filtered time points are used.
+            If specified, time points are subsampled evenly across the filtered set.
+        Returns
+        -------
+        result : dict
+            Dictionary containing the following keys:
+                - 'time_index': Indices of the selected time points.
+                - 'timeyear': Fractional years corresponding to the selected time points.
+                - 'Cout': True output tracer concentrations for the selected time points (torch.Tensor).
+                - 'Chat': Predicted output tracer concentrations (numpy.ndarray).
+                - 'ywfhat': Estimated cumulative TTDs (numpy.ndarray).
+                - 'PQhat': Cumulative sum of the predicted TTDs (numpy.ndarray).
+                - 'ERROR_Cout': Normalized L2 error between predicted and true output concentrations.
+        Notes
+        -----
+        - The method loads a trained model based on the specified algorithm (`algo` attribute).
+        - Data is preprocessed and batched according to the provided parameters.
+        - No gradients are computed; the model is run in evaluation mode.
+        - The method supports multiple algorithms: 'WATRES', 'AgeDomain', and 'Weibull'.
         """
         result = {}
         Tmax = self.Tmax
@@ -89,7 +105,7 @@ class Results():
 
         result['timeyear'] = timeyear_train
         if algo=='WATRES':
-                model = lightning_interface.LightningWatres(input_size, Tmax=Tmax)
+                model = lightning_interface.LightningWatres(input_size, self.mean_input_tracer, Tmax=Tmax)
         elif algo=='AgeDomain':
                 model = lightning_interface.LightningAgeDomain(input_size, Tmax=Tmax)
         elif algo=='Weibull':
@@ -135,7 +151,47 @@ class Results():
         
     def compute_results(self, BATCH_SIZE = None, n_test=360*24*3, pathsite_ground_truth=None, site_ground_truth=None, save_training_results=False):
         """
-        Method precomputing and saving different statistics of interest to make faster and easier visualizations.
+        Computes and saves various statistics and results for model evaluation and visualization.
+        This method precomputes and stores statistics such as model predictions, errors, and hydrological metrics
+        for both training and test datasets. It supports multiple algorithms (WATRES, AgeDomain, Weibull) and can
+        optionally save training results. The results are saved in a pickle file for later analysis and visualization.
+        Parameters
+        ----------
+        BATCH_SIZE : int, optional
+            Number of test samples to process in a batch. If None, defaults to n_test-5.
+        n_test : int, optional
+            Number of test samples to evaluate. Default is 360*24*3.
+        pathsite_ground_truth : str, optional
+            Path to the directory containing ground truth data. If None, defaults to self.pathsite/data.
+        site_ground_truth : str, optional
+            Site name for ground truth data. If None, defaults to self.site.
+        save_training_results : bool, optional
+            If True, computes and saves results for the training set as well.
+        Returns
+        -------
+        result : dict
+            Dictionary containing computed statistics and results, including:
+                - 'lst_train', 'lst_test': Indices of training and test samples.
+                - 'Cout_train', 'Cout': True output concentrations for train/test.
+                - 'Chat_train', 'Chat': Predicted output concentrations for train/test.
+                - 'ywfhat_train', 'ywfhat': Predicted young water fractions for train/test.
+                - 'PQhat_train', 'global_PQhat': Predicted cumulative transit time distributions (TTDs).
+                - 'Q_test': Discharge values for test samples.
+                - 'w_winter', 'w_summer': Seasonal Weibull parameters (if applicable).
+                - 'alpha', 'alpha_train': Model-specific parameters (if applicable).
+                - 'global_PQtrue', 'quantile*_PQtrue': Ground truth cumulative TTDs (if available).
+                - 'ERROR_Cout', 'ERROR_Cout_train': Prediction errors for output concentrations.
+                - 'ERROR_ywf', 'ERROR_global_ywf': Errors for young water fraction predictions.
+                - 'ERROR_global_PQ', 'ERROR_quantilesQ_PQ': Errors for cumulative TTDs.
+                - 'SThat', 'ST_true': Predicted and true storage time distributions (if available).
+                - 'ERROR_ST': Errors for storage time distributions.
+                - Additional intermediate and diagnostic results.
+        Notes
+        -----
+        - This method loads the trained model from disk and evaluates it on the specified datasets.
+        - If ground truth TTD or storage data is unavailable, related results will be omitted.
+        - Results are saved as a pickle file in the 'save' directory of the site path.
+        - Requires external dependencies: torch, numpy, pandas, pyreadr, pickle, and lightning_interface.
         """
         result = {}    
 

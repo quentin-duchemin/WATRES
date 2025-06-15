@@ -5,4 +5,8 @@ pytorch-lightning
 pyreadr
 pandas
 matplotlib
+pickle
 seaborn
+collections
+itertools
+math

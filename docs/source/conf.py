@@ -117,7 +117,7 @@ html_logo = "_static/logo.png"
 
 nbsphinx_thumbnails = {
     "tutorials/notebooks/generating-simulated-data": "_static/tutorials/simulated_data.png",
-    "tutorials/notebooks/visualizing-results": "_static/tutorials/nb_visualization.png",
+    "tutorials/notebooks/reproducing_results": "_static/tutorials/reproducing_results.png",
     "tutorials/notebooks/running-the-model": "_static/tutorials/quickstart-on-simulated-data.png",
     "tutorials/notebooks/overview": "_static/watres_readme.png",
 }
