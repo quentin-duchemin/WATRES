@@ -6,7 +6,7 @@ from torch.optim import Adam
 import pytorch_lightning as pl
 import torch.nn.functional as F
 import torch.nn as nn
-from .model.basisw import *
+
     
 from .model.w_weibull import Weibull
 class LightningWeibull(pl.LightningModule):

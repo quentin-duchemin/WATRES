@@ -10,7 +10,7 @@ def trainf(x):
     sys.path.append(os.path.join(path_root))
     from WATRES import WATRES
     model_bert = WATRES(pathsite=x['pathsite'], site=x['site'], algo=x['algo'], site_name2save=x['site_name2save'])
-    model_bert.train(BATCH_SIZE=4000, n_validation = 365*24*2, n_train=365*24*10, seed = x['seed'], nb_epochs=400, std_input_noise=x['input_std'], std_output_noise=x['output_std'])
+    model_bert.train(BATCH_SIZE=400, n_validation = 365*24*2, n_train=365*24*10, seed = x['seed'], nb_epochs=400, std_input_noise=x['input_std'], std_output_noise=x['output_std'])
     return 1
 
 def testf(x): 
