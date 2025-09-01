@@ -114,22 +114,22 @@ class Results():
         model.eval()
     
         with torch.no_grad():            
-            Cout_train = torch.zeros(len(lst))
-            CJ_train = torch.zeros((len(lst), Tmax))
-            J_train = torch.zeros((len(lst), Tmax))
-            Q_train = torch.zeros(len(lst))
-            ET_train = torch.zeros(len(lst))
-            Qinv_train = torch.zeros((len(lst),Tmax))
-            ETinv_train = torch.zeros((len(lst),Tmax))
-    
-            for i,t in enumerate(lst):
-                Cout_train[i] = Cout[t]
-                CJ_train[i,:] = CJ[t-Tmax:t]
-                J_train[i,:] = J[t-Tmax:t]
-                Q_train[i]  = torch.sum(Q[t-Tmax:t])
-                ET_train[i] = torch.sum(ET[t-Tmax:t])
-                ETinv_train[i,:] = torch.flip(ET[t-Tmax:t], [0])
-                Qinv_train[i,:] = torch.flip(Q[t-Tmax:t], [0])
+            idx = torch.tensor(lst)
+            Cout_train = Cout[idx]
+            
+            CJ_windows = CJ.unfold(0, Tmax, 1)
+            J_windows = J.unfold(0, Tmax, 1)
+            Q_windows = Q.unfold(0, Tmax, 1)
+            ET_windows = ET.unfold(0, Tmax, 1)
+            
+            CJ_train = CJ_windows[idx - Tmax]
+            J_train = J_windows[idx - Tmax]
+            
+            Q_train = Q_windows[idx - Tmax].sum(dim=1)
+            ET_train = ET_windows[idx - Tmax].sum(dim=1)
+            
+            Qinv_train = torch.flip(Q_windows[idx - Tmax], dims=[1])
+            ETinv_train = torch.flip(ET_windows[idx - Tmax], dims=[1])
     
             if algo=='AgeDomain':
                 Chat, ywfhat, pQ = model.model.forward(data_train, J_train, CJ_train, returnpQ=True)
@@ -230,22 +230,22 @@ class Results():
             model.eval()
         
             with torch.no_grad():            
-                Cout_train = torch.zeros(len(lst_train))
-                CJ_train = torch.zeros((len(lst_train), Tmax))
-                J_train = torch.zeros((len(lst_train), Tmax))
-                Q_train = torch.zeros(len(lst_train))
-                ET_train = torch.zeros(len(lst_train))
-                Qinv_train = torch.zeros((len(lst_train),Tmax))
-                ETinv_train = torch.zeros((len(lst_train),Tmax))
-        
-                for i,t in enumerate(lst_train):
-                    Cout_train[i] = Cout[t]
-                    CJ_train[i,:] = CJ[t-Tmax:t]
-                    J_train[i,:] = J[t-Tmax:t]
-                    Q_train[i]  = torch.sum(Q[t-Tmax:t])
-                    ET_train[i] = torch.sum(ET[t-Tmax:t])
-                    ETinv_train[i,:] = torch.flip(ET[t-Tmax:t], [0])
-                    Qinv_train[i,:] = torch.flip(Q[t-Tmax:t], [0])
+                idx = torch.tensor(lst)
+                Cout_train = Cout[idx]
+                
+                CJ_windows = CJ.unfold(0, Tmax, 1)
+                J_windows = J.unfold(0, Tmax, 1)
+                Q_windows = Q.unfold(0, Tmax, 1)
+                ET_windows = ET.unfold(0, Tmax, 1)
+                
+                CJ_train = CJ_windows[idx - Tmax]
+                J_train = J_windows[idx - Tmax]
+                
+                Q_train = Q_windows[idx - Tmax].sum(dim=1)
+                ET_train = ET_windows[idx - Tmax].sum(dim=1)
+                
+                Qinv_train = torch.flip(Q_windows[idx - Tmax], dims=[1])
+                ETinv_train = torch.flip(ET_windows[idx - Tmax], dims=[1])
         
                 if algo=='AgeDomain':
                     Chat, ywfhat, pQ = model.model.forward(data_train, J_train, CJ_train, returnpQ=True)
@@ -341,22 +341,22 @@ class Results():
         model.eval()
     
         with torch.no_grad():            
-            Cout_test = torch.zeros(len(lst_test))
-            CJ_test = torch.zeros((len(lst_test), Tmax))
-            J_test = torch.zeros((len(lst_test), Tmax))
-            Q_test = torch.zeros(len(lst_test))
-            ET_test = torch.zeros(len(lst_test))
-            Qinv_test = torch.zeros((len(lst_test),Tmax))
-            ETinv_test = torch.zeros((len(lst_test),Tmax))
-    
-            for i,t in enumerate(lst_test):
-                Cout_test[i] = Cout[t]
-                CJ_test[i,:] = CJ[t-Tmax:t]
-                J_test[i,:] = J[t-Tmax:t]
-                Q_test[i]  = torch.sum(Q[t-Tmax:t])
-                ET_test[i] = torch.sum(ET[t-Tmax:t])
-                ETinv_test[i,:] = torch.flip(ET[t-Tmax:t], [0])
-                Qinv_test[i,:] = torch.flip(Q[t-Tmax:t], [0])
+            idx = torch.tensor(lst)
+            Cout_test = Cout[idx]
+            
+            CJ_windows = CJ.unfold(0, Tmax, 1)
+            J_windows = J.unfold(0, Tmax, 1)
+            Q_windows = Q.unfold(0, Tmax, 1)
+            ET_windows = ET.unfold(0, Tmax, 1)
+            
+            CJ_test = CJ_windows[idx - Tmax]
+            J_test = J_windows[idx - Tmax]
+            
+            Q_test = Q_windows[idx - Tmax].sum(dim=1)
+            ET_test = ET_windows[idx - Tmax].sum(dim=1)
+            
+            Qinv_test = torch.flip(Q_windows[idx - Tmax], dims=[1])
+            ETinv_test = torch.flip(ET_windows[idx - Tmax], dims=[1])
     
             if algo=='AgeDomain':
                 Chat, ywfhat, pQ = model.model.forward(data_test, J_test, CJ_test, returnpQ=True)
