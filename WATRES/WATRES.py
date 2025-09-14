@@ -142,24 +142,30 @@ class WATRES(Dataset, Results):
         lst_train = lst
         input_size = data_batch.shape[1]
         self.timeyear_train = timeyear_train
-            
-            
+
         self.lst_train = lst_train
-        Cout_batch = torch.zeros(BATCH_SIZE)
-        CJ_batch = torch.zeros((BATCH_SIZE,Tmax))
-        J_batch = torch.zeros((BATCH_SIZE,Tmax))
-        Q_batch = torch.zeros(BATCH_SIZE)
-        ET_batch = torch.zeros(BATCH_SIZE)
-        Qinv_batch = torch.zeros((BATCH_SIZE,Tmax))
-        ETinv_batch = torch.zeros((BATCH_SIZE,Tmax))
-        for i,t in enumerate(lst_train):
-            Cout_batch[i] = Cout[t]
-            CJ_batch[i,:] = CJ[t-Tmax:t]
-            J_batch[i,:]  = J[t-Tmax:t]
-            Q_batch[i]  = torch.sum(Q[t-Tmax:t])
-            ET_batch[i] = torch.sum(ET[t-Tmax:t])
-            ETinv_batch[i,:] = torch.flip(ET[t-Tmax:t], [0])
-            Qinv_batch[i,:] = torch.flip(Q[t-Tmax:t], [0])
+        idx = torch.tensor(lst_train)
+        
+        # Cout_batch
+        Cout_batch = Cout[idx]
+        
+        # Time-series slices
+        time_idx = torch.arange(Tmax).unsqueeze(0)  # (1, Tmax)
+        batch_idx = idx.unsqueeze(1) - Tmax + time_idx  # corrected shift
+        batch_idx = batch_idx.clamp(min=0)
+        
+        # CJ_batch and J_batch
+        CJ_batch = CJ[batch_idx]  # shape (BATCH_SIZE, Tmax)
+        J_batch  = J[batch_idx]   # shape (BATCH_SIZE, Tmax)
+        
+        # Q_batch and ET_batch sums
+        Q_batch  = Q[batch_idx].sum(dim=1)
+        ET_batch = ET[batch_idx].sum(dim=1)
+        
+        # Reversed (inverse) batches
+        Qinv_batch  = torch.flip(Q[batch_idx], dims=[1])
+        ETinv_batch = torch.flip(ET[batch_idx], dims=[1])
+
             
         #EVAL
         lst_total = np.arange(len(CJ)-(n_test+n_validation),len(CJ)-n_test)
@@ -170,22 +176,27 @@ class WATRES(Dataset, Results):
         lst_test = lst
         data_test, timeyear_test = self.get_features(pathsite, site, lst)
     
-        Cout_test = torch.zeros(len(lst_test))
-        CJ_test = torch.zeros((len(lst_test), Tmax))
-        J_test = torch.zeros((len(lst_test), Tmax))
-        Q_test = torch.zeros(len(lst_test))
-        ET_test = torch.zeros(len(lst_test))
-        Qinv_test = torch.zeros((len(lst_test),Tmax))
-        ETinv_test = torch.zeros((len(lst_test),Tmax))
-    
-        for i,t in enumerate(lst_test):
-            Cout_test[i] = Cout[t]
-            CJ_test[i,:] = CJ[t-Tmax:t]
-            J_test[i,:] = J[t-Tmax:t]
-            Q_test[i]  = torch.sum(Q[t-Tmax:t])
-            ET_test[i] = torch.sum(ET[t-Tmax:t])
-            ETinv_test[i,:] = torch.flip(ET[t-Tmax:t], [0])
-            Qinv_test[i,:] = torch.flip(Q[t-Tmax:t], [0])
+        idx_test = torch.tensor(lst_test)
+
+        # Cout_test
+        Cout_test = Cout[idx_test]
+        
+        # Time-series slices
+        time_idx = torch.arange(Tmax).unsqueeze(0)  # (1, Tmax)
+        batch_idx = idx_test.unsqueeze(1) - Tmax + time_idx  # matches t-Tmax:t
+        batch_idx = batch_idx.clamp(min=0)  # avoid negative indices
+        
+        # CJ_test and J_test
+        CJ_test = CJ[batch_idx]  # shape (len(lst_test), Tmax)
+        J_test  = J[batch_idx]   # shape (len(lst_test), Tmax)
+        
+        # Q_test and ET_test sums
+        Q_test  = Q[batch_idx].sum(dim=1)
+        ET_test = ET[batch_idx].sum(dim=1)
+        
+        # Reversed (inverse) batches
+        Qinv_test  = torch.flip(Q[batch_idx], dims=[1])
+        ETinv_test = torch.flip(ET[batch_idx], dims=[1])
             
             
         if algo=='Weibull':
@@ -203,6 +214,10 @@ class WATRES(Dataset, Results):
 
         for epoch in range(nb_epochs):
             loss = model.training_step(data_batch, Cout_batch, CJ_batch, J_batch)
+            import os, psutil
+
+            process = psutil.Process(os.getpid())
+            print(f"Memory used: {process.memory_info().rss / 1e6} MB")
             loss.backward()
             optimizer.step()
             optimizer.zero_grad()
